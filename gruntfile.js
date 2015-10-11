@@ -34,6 +34,21 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// sass
+		sass: {
+			build: {
+				files: [
+					{
+						expand: true,
+						cwd: 'app',
+						src: ['features/**/*.scss', 'components/**/*.scss'],
+						ext: '.css',
+						dest: 'build/develop'
+					}
+				]
+			}
+		},
+
 		// 配置uglify插件，压缩js
 		uglify: {
 			options: {
@@ -102,10 +117,11 @@ module.exports = function(grunt) {
 				}
 			},
 			css: {
-				files: ['app/styles/**'],
-				tasks: ['csslint'],
+				files: ['app/**/*.scss'],
+				tasks: ['sass', 'csslint'],
 				options: {
-					livereload: true
+					livereload: true,
+					spawn: false
 				}
 			}
 		},
@@ -150,7 +166,7 @@ module.exports = function(grunt) {
 		},
 
 		concurrent: {
-			tasks: ['nodemon', 'watch', 'ts:watch'],
+			tasks: ['nodemon', 'watch', 'ts:watch', 'sass:build'],
 			options: {
 				logConcurrentOutput: true
 			}
@@ -158,7 +174,7 @@ module.exports = function(grunt) {
 	});
 
 	// 注册任务
-	grunt.registerTask('build', ['ts:build']);
+	grunt.registerTask('build', ['ts:build', 'sass:build']);
 	grunt.registerTask('develop', ['concurrent']);
 	grunt.registerTask('update', ['bower', 'build']);
 	grunt.registerTask('compress js', ['jshint', 'uglify']);
