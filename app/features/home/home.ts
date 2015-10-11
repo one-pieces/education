@@ -3,9 +3,9 @@
 /// <amd-dependency path='text!features/home/home.html' />
 
 import angular = require('angular');
+import exampleDirective = require("../../components/directives/example/example-directive");
 import exampleService = require("../../components/services/example/example-service");
 import homeController = require("./home-controller");
-import testDirective = require("../../components/directives/test/test-directive");
 import scrollToFixedTopDirective = require("../../components/directives/scroll-to-fixed-top/scroll-to-fixed-top-directive");
 
 
@@ -16,7 +16,7 @@ export var template = window.require('text!features/home/home.html');
 export var controllerName = homeController.controllerName;
 
 angular.module(moduleName, [
+    exampleDirective.moduleName,
     exampleService.moduleName,
-    testDirective.moduleName, 
     scrollToFixedTopDirective.moduleName])
     .controller(homeController.controllerName, homeController.Controller);

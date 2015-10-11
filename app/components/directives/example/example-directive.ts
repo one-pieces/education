@@ -1,34 +1,34 @@
 /// <reference path='../../../app.d.ts' />
-/// <amd-dependency path='css!./test.css' />
-/// <amd-dependency path='text!components/directives/test/test.html' />
+/// <amd-dependency path='css!./example.css' />
+/// <amd-dependency path='text!components/directives/example/example.html' />
 import angular = require('angular');
 
 'use strict';
 
-export var moduleName = 'cftvc.components.diretcives.test';
-export var directiveName = 'opTest';
-export var templateText = window.require('text!components/directives/test/test.html');
+export var moduleName = 'cftvc.components.diretcives.Example';
+export var directiveName = 'opExample';
+export var templateText = window.require('text!components/directives/example/example.html');
 
 export interface IScope extends ng.IScope {
-    test: Test;
+    example: Example;
     someAttribute: string;
 }
 
 /**
- * Test class for the directive
+ * Example class for the directive
  */
-export class Test {
+export class Example {
     static $inject = ['scope'];
     
     someValue: string;
 
     constructor(private scope: IScope) {
-        this.someValue = 'test-directive';
+        this.someValue = 'example-directive';
     }
 }
 
 /**
- * Test-Directive
+ * Example-Directive
  * A example for create a directive
  * 
  * ### Sample usage:
@@ -36,13 +36,13 @@ export class Test {
  * ```html
  *
  * <div>
- *     <op-test some-attribute="AString">
- *     </op-test>
+ *     <op-example some-attribute="AString">
+ *     </op-example>
  * </div>
  *
  * ```
  */
-export class TestDirective implements ng.IDirective {
+export class ExampleDirective implements ng.IDirective {
     static $inject = ['$injector'];
     
     constructor(private $injector: ng.auto.IInjectorService) {}
@@ -55,12 +55,12 @@ export class TestDirective implements ng.IDirective {
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
-        scope.test = <Test>
-            this.$injector.instantiate(Test, { scope: scope, element: element, attrs: attrs });
+        scope.example = <Example>
+        this.$injector.instantiate(Example, { scope: scope, element: element, attrs: attrs });
     }
 }
 
 angular.module(moduleName, [])
     .directive(directiveName, ['$injector', ($injector: ng.auto.IInjectorService) => {
-        return $injector.instantiate(TestDirective);
+        return $injector.instantiate(ExampleDirective);
     }]);
