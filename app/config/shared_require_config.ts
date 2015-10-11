@@ -10,6 +10,8 @@
         },
         paths: {
             angular: 'vendor/angular/angular',
+            bootstrap: 'vendor/bootstrap/bootstrap',
+            'bootstrap-css': 'vendor/bootstrap-css/bootstrap.min',
             jquery: 'vendor/jquery/jquery',
             json: 'vendor/requirejs-plugins/json',
             require_config: 'config/require_config',
@@ -21,6 +23,12 @@
             angular: {
                 deps: ['jquery'],
                 exports: 'angular'
+            },
+            bootstrap: {
+                deps: ['jquery']
+            },
+            'bootstrap-css': {
+                deps: ['jquery']
             },
             'ui.router': {
                 deps: ['angular']

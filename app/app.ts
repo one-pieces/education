@@ -1,4 +1,6 @@
 /// <reference path='./app.d.ts' />
+/// <amd-dependency path='bootstrap-css' />
+/// <amd-dependency path='css!/vendor/bootstrap-css/bootstrap.min.css' />
 
 import $ = require('jquery');
 import angular = require('angular');
