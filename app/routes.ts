@@ -6,13 +6,13 @@ import home = require("./features/home/home");
 
 'use strict';
 
-export var moduleName = 'framework.routes';
+export var moduleName = 'cftvc.routes';
 
 angular.module(moduleName, ['ui.router', home.moduleName])
     .config(['$stateProvider', ($stateProvider: ng.ui.IStateProvider) => {
         $stateProvider
-            .state('framework', {
-                url: '/framework/home',
+            .state('cftvc', {
+                url: '/cftvc/home',
                 template: home.template,
                 controller: home.controllerName
             });

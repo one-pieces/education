@@ -6,7 +6,7 @@ export interface IScope extends ng.IScope {
     home?: HomeController;
 }
 
-export var controllerName = 'framework.home.controller';
+export var controllerName = 'cftvc.home.controller';
 
 /**
  * Controller for the home page
@@ -14,7 +14,7 @@ export var controllerName = 'framework.home.controller';
 export class HomeController {
     static $inject = [ '$scope'];
 
-    title = 'test';
+    title = 'cftvc';
 
     constructor(private $scope: IScope) {
         $scope.home = this;

@@ -14,5 +14,5 @@ var server = require('http').createServer(app);
 app.set('port', process.env.PORT);
 
 server.listen(app.get('port'), function() {
-    console.log('framework is listening port ' + app.get('port'));
+    console.log('cftvc is listening port ' + app.get('port'));
 });

@@ -6,7 +6,7 @@ import routes = require('./routes');
 
 'use strict';
 
-var moduleName = 'framework';
+var moduleName = 'cftvc';
 
 var app = angular.module(moduleName, [routes.moduleName]);
 
@@ -15,8 +15,8 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
         $stateProvider: ng.ui.IStateProvider, 
         $locationProvider: ng.ILocationProvider) {
         $urlRouterProvider
-            .when('/', '/framework/home')
-            .otherwise('/framework/home');
+            .when('/', '/cftvc/home')
+            .otherwise('/cftvc/home');
 
         $locationProvider.html5Mode(true);
     }]);

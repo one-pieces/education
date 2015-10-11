@@ -1,15 +1,15 @@
-# framework
-The front end prototype framework for my projects
+# cftvc
+cftvc
 
 How to Set Up:
 
-1. git clone https://github.com/one-pieces/framework.git
-2. cd framework
+1. git clone https://github.com/one-pieces/cftvc.git
+2. cd cftvc
 3. npm install
 4. bower install
 5. grunt update
 6. grunt develop
-7. 浏览器输入localhost:5000/framework/home
+7. 浏览器输入localhost:5000/cftvc/home
 
 This project has used MEAN(Mongo, Express, AngularJS, NodeJS) framework. The following is the file structure:
 

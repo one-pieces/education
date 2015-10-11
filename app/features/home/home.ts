@@ -7,7 +7,7 @@ import homeController = require("./home-controller");
 
 'use strict';
 
-export var moduleName = 'framework.home';
+export var moduleName = 'cftvc.home';
 export var template = window.require('text!features/home/home.html');
 export var controllerName = homeController.controllerName;
 
