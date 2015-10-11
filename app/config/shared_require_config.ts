@@ -15,6 +15,7 @@
             jquery: 'vendor/jquery/jquery',
             json: 'vendor/requirejs-plugins/json',
             require_config: 'config/require_config',
+            restmod: 'vendor/angular-restmod/angular-restmod-bundle.min',
             shared_require_config: 'config/shared_require_config',
             text: 'vendor/requirejs-text/text',
             'ui.router': 'vendor/angular-ui-router/angular-ui-router'
@@ -29,6 +30,9 @@
             },
             'bootstrap-css': {
                 deps: ['jquery']
+            },
+            restmod: {
+                deps: ['angular']
             },
             'ui.router': {
                 deps: ['angular']
