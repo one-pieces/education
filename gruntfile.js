@@ -118,7 +118,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['app/**/*.scss'],
-				tasks: ['sass', 'csslint'],
+				tasks: ['sass:build', 'csslint'],
 				options: {
 					livereload: true,
 					spawn: false

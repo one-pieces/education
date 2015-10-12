@@ -3,18 +3,18 @@
 
 import angular = require('angular');
 import config = require('config');
-import home = require("./features/home/home");
+import base = require("./features/base/base");
 
 'use strict';
 
 export var moduleName = config.appName + '.routes';
 
-angular.module(moduleName, ['ui.router', home.moduleName])
+angular.module(moduleName, ['ui.router', base.moduleName])
     .config(['$stateProvider', ($stateProvider: ng.ui.IStateProvider) => {
         $stateProvider
             .state('base', {
                 url: config.basePath,
-                template: home.template,
-                controller: home.controllerName
+                template: base.template,
+                controller: base.controllerName
             });
     }]);

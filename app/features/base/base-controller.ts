@@ -6,15 +6,15 @@ import models = require('../../components/models');
 'use strict';
 
 export interface IScope extends ng.IScope {
-    home?: HomeController;
+    base?: BaseController;
 }
 
-export var controllerName = config.appName + '.home.controller';
+export var controllerName = config.appName + '.base.controller';
 
 /**
- * Controller for the home page
+ * Controller for the base page
  */
-export class HomeController {
+export class BaseController {
     static $inject = [ '$scope', 
                        exampleService.serviceName,
                        models.user.serviceName ];
@@ -26,7 +26,7 @@ export class HomeController {
     constructor(private $scope: IScope,
                 private exampleService: exampleService.Service,
                 private UserModel: models.user.IUserStatic) {
-        $scope.home = this;
+        $scope.base = this;
         this.test = exampleService.exampleFunc();
         this.UserModel.$find('_0_1').$then((user) => {
             user.ui.fullName = user.givenName + ' ' + user.familyName;
@@ -36,4 +36,4 @@ export class HomeController {
     }
 }
 
-export class Controller extends HomeController {}
+export class Controller extends BaseController {}
