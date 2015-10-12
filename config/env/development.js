@@ -1,4 +1,4 @@
-var appName = 'framework';
+var appName = 'education';
 
 module.exports = {
     appName: appName,

@@ -1,6 +1,6 @@
 /// <reference path='./app.d.ts' />
 
-var appName = 'framework';
+var appName = 'education';
 
 var config = {
     appName: appName,
