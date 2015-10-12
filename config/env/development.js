@@ -5,7 +5,7 @@ module.exports = {
     db: 'mongodb://localhost/' + appName,
     server: {
         // mode: 'development', //can be 'development', 'production', or 'localProductionTest'
-        port: 5001,
+        port: 5000,
         basePath: '/' + appName
     },
     sessionSecret: 'developmentSessionSecret'
