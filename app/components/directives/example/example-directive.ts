@@ -2,10 +2,11 @@
 /// <amd-dependency path='css!./example.css' />
 /// <amd-dependency path='text!components/directives/example/example.html' />
 import angular = require('angular');
+import config = require('config');
 
 'use strict';
 
-export var moduleName = 'cftvc.components.diretcives.Example';
+export var moduleName = config.appName + '.components.diretcives.Example';
 export var directiveName = 'opExample';
 export var templateText = window.require('text!components/directives/example/example.html');
 

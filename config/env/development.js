@@ -1,10 +1,12 @@
+var appName = 'framework';
+
 module.exports = {
-    appName: 'cftvc',
-    db: 'mongodb://localhost/' + this.appName,
+    appName: appName,
+    db: 'mongodb://localhost/' + appName,
     server: {
         // mode: 'development', //can be 'development', 'production', or 'localProductionTest'
-        port: 5000,
-        basePath: '/cftvc'
+        port: 5001,
+        basePath: '/' + appName
     },
     sessionSecret: 'developmentSessionSecret'
 }

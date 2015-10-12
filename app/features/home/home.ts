@@ -3,6 +3,7 @@
 /// <amd-dependency path='text!features/home/home.html' />
 
 import angular = require('angular');
+import config = require('config');
 import exampleDirective = require("../../components/directives/example/example-directive");
 import exampleService = require("../../components/services/example/example-service");
 import homeController = require("./home-controller");
@@ -12,7 +13,7 @@ import scrollToFixedTopDirective = require("../../components/directives/scroll-t
 
 'use strict';
 
-export var moduleName = 'cftvc.home';
+export var moduleName = config.appName + '.home';
 export var template = window.require('text!features/home/home.html');
 export var controllerName = homeController.controllerName;
 

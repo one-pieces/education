@@ -46,6 +46,7 @@ exports.createApp = function(callback) {
 };
 
 exports.createDb = function(callback) {
+    console.log(config.db);
     var db = mongoose.connect(config.db);
     return db;
 };

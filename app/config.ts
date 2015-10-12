@@ -1,9 +1,12 @@
 /// <reference path='./app.d.ts' />
 
+var appName = 'framework';
+
 var config = {
+    appName: appName,
     apiBasePath: '/api',
-    basePath: '/cftvc',
-    defaultBasePage: 'cftvc',
+    basePath: '/' + appName,
+    defaultBasePage: 'base',
 
     production: true
 };

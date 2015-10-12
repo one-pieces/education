@@ -1,9 +1,10 @@
 /// <reference path='../../../app.d.ts' />
 
 import angular = require('angular');
+import config = require('config');
 'use strict';
 
-export var moduleName = 'cftvc.components.services.example';
+export var moduleName = config.appName + '.components.services.example';
 export var serviceName = 'opExample';
 
 /**

@@ -4,11 +4,12 @@
 
 import $ = require('jquery');
 import angular = require('angular');
+import config = require('config');
 import routes = require('./routes');
 
 'use strict';
 
-var moduleName = 'cftvc';
+var moduleName = config.appName;
 
 var app = angular.module(moduleName, [routes.moduleName]);
 
@@ -17,8 +18,8 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
         $stateProvider: ng.ui.IStateProvider, 
         $locationProvider: ng.ILocationProvider) {
         $urlRouterProvider
-            .when('/', '/cftvc/home')
-            .otherwise('/cftvc/home');
+            .when('/', config.basePath)
+            .otherwise(config.basePath);
 
         $locationProvider.html5Mode(true);
     }]);

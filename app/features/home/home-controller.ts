@@ -1,5 +1,6 @@
 /// <reference path='../../app.d.ts' />
 
+import config = require('config');
 import exampleService = require("../../components/services/example/example-service");
 import models = require('../../components/models');
 'use strict';
@@ -8,7 +9,7 @@ export interface IScope extends ng.IScope {
     home?: HomeController;
 }
 
-export var controllerName = 'cftvc.home.controller';
+export var controllerName = config.appName + '.home.controller';
 
 /**
  * Controller for the home page
@@ -18,7 +19,7 @@ export class HomeController {
                        exampleService.serviceName,
                        models.user.serviceName ];
 
-    title = 'cftvc';
+    title = config.appName;
     test = 'test';
     currentUser: models.user.IUser;
 

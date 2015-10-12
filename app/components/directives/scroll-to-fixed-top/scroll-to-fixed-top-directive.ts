@@ -1,9 +1,10 @@
 /// <reference path='../../../app.d.ts' />
 import angular = require('angular');
+import config = require('config');
 
 'use strict';
 
-export var moduleName = 'cftvc.components.diretcives.scrollToFixedTop';
+export var moduleName = config.appName + '.components.diretcives.scrollToFixedTop';
 export var directiveName = 'opScrollToFixedTop';
 
 /**
