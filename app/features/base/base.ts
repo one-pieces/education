@@ -9,7 +9,7 @@ import exampleService = require("../../components/services/example/example-servi
 import baseController = require("./base-controller");
 import models = require('../../components/models');
 import scrollToFixedTopDirective = require("../../components/directives/scroll-to-fixed-top/scroll-to-fixed-top-directive");
-
+import slickDirective = require("../../components/directives/slick/slick-directive");
 
 'use strict';
 
@@ -21,5 +21,6 @@ angular.module(moduleName, [
     exampleDirective.moduleName,
     exampleService.moduleName,
     models.moduleName,
-    scrollToFixedTopDirective.moduleName])
+    scrollToFixedTopDirective.moduleName,
+    slickDirective.moduleName])
     .controller(baseController.controllerName, baseController.Controller);
