@@ -1,51 +1,63 @@
 <div class="base">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div op-slick infinite="false" prev-arrow=".base .prev" next-arrow=".base .next">
-                    <div class="slide">
-                        <h1>页面一</h1>
-                    </div>
-                    <div class="slide">
-                        <h1>页面二</h1>
-                    </div>
-                    <div class="slide">
-                        <h1>页面三</h1>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <h1>header</h1>
+            </div>
+        </div>
+    </header>
+    <div class="section">    
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron col-sm-12">
+                    <div op-slick infinite="false" prev-arrow=".base .prev" next-arrow=".base .next" fade="true">
+                        <div class="slide">
+                            <h3 class="title">Goal</h3>
+                            <div class="jumbotron">
+                                <h3>页面一</h3>
+                                <p>
+                                    又回到春末的五月
+                                    凌晨的集市人不多
+                                    小孩在门前唱着歌
+                                    阳光它照暖了西河
+
+                                    柳絮乘着大风吹
+                                    树影下的人想睡
+                                    沉默的人从此刻开始快乐起来
+                                    脱掉寒冬的傀儡
+
+                                    我忧郁的白衬衫
+                                    青春口袋里面的第一支香烟
+                                    情窦初开的我
+                                </p>
+                            </div>
+                            <div class="start"><a class="btn btn-lg slick-arrow next" href="#">START</a></div>
+                        </div>
+                        <div class="slide">
+                            <h1>页面二</h1>
+                            <embed src="http://player.youku.com/player.php/sid/XMTM2MDQ5MzUxMg==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+                        </div>
+                        <div class="slide">
+                            <h1>页面三</h1>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-fixed-bottom">
+    <footer class="footer fixed-bottom">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">cftvc</a>
-            </div>
-
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <button class="btn btn-info slick-arrow prev">prev</button>
-                    </li>
-                    <li>
-                        <button class="btn btn-info slick-arrow next">next</button>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">登录</a>
-                    </li>
-                    <li class="signup-btn">
-                        <a href="/">注册</a>
-                    </li>
-                </ul>
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-inline">
+                        <li><a class="btn slick-arrow prev" href="#">prev</a></li>
+                        <li><a class="btn slick-arrow next" href="#">next</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 footer-right">
+                    <h5>footer-right</h5>
+                </div>
             </div>
         </div>
-    </nav>
+    </footer>
 </div>

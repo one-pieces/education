@@ -1,4 +1,4 @@
-* {
+*, ol, ul, h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
 }
@@ -7,8 +7,8 @@ body {
     background: rgba(0, 0, 0, 0.8);
     font-family: 'latoregular';
     font-size: 14px;
-    color: #989898;
-    height: 1000px;
+    color: #A8A8A8;
+    height: 100%;
 }
 
 a:hover {

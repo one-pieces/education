@@ -1,4 +1,21 @@
-.slide {
-    // height: 400px;
-    background-color: #f5f5f5;
+div[op-slick] {
+    .slide {
+        min-height: 450px;
+        .title {
+            margin: 20px;
+            text-align: center;
+        }
+        .jumbotron {
+            background-color: #FFFFFF;
+            padding: 20px;
+            margin-bottom: 0;
+        }
+        .start {
+            .btn {
+                width: 160px;
+            }
+            text-align: center;
+            margin: 30px;
+        }
+    }
 }
