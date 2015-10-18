@@ -20,7 +20,7 @@
             'slick-carousel': 'vendor/slick-carousel/slick.min',
             text: 'vendor/requirejs-text/text',
             'ui.router': 'vendor/angular-ui-router/angular-ui-router',
-            'ng.pageslide': 'vender/ng-pageslide/index'
+            'ng-pageslide': 'vender/ng-pageslide/index'
         },
         shim: {
             angular: {
@@ -42,6 +42,7 @@
             'ui.router': {
                 deps: ['angular']
             },
+
             'ng-pageslide': {
                 deps: ['angular']
             }

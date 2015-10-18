@@ -10,7 +10,7 @@ import baseController = require("./base-controller");
 import models = require('../../components/models');
 import scrollToFixedTopDirective = require("../../components/directives/scroll-to-fixed-top/scroll-to-fixed-top-directive");
 import slickDirective = require("../../components/directives/slick/slick-directive");
-
+import pageslide = require('pageslide');
 'use strict';
 
 export var moduleName = config.appName + '.base';
