@@ -1,0 +1,35 @@
+.title {
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: #E2E9E7;
+    padding: 0 50px;
+
+    &.container {
+        max-width: 1000px;
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+    .title {
+        color: #5e5e5e;
+    }
+    .jumbotron {
+        background-color: #FFFFFF;
+        padding: 20px;
+        margin-bottom: 0;
+        p {
+            color: #050505;
+            font-size: 18px;
+        }
+    }
+    .start {
+        .btn {
+            width: 160px;
+        }
+        text-align: center;
+        margin: 30px;
+    }
+}

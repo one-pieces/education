@@ -6,33 +6,6 @@ div[op-slick] {
             font-size: 20px;
             text-align: center;
         }
-
-        .jumbotron {
-            &.container {
-                max-width: 800px;
-                margin-top: 80px;
-                margin-bottom: 100px;
-            }
-            .title {
-                color: #5e5e5e;
-            }
-            background-color: #E2E9E7;
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-top: 0px;
-            .jumbotron {
-                background-color: #FFFFFF;
-                padding: 20px;
-                margin-bottom: 0;
-            }
-            .start {
-                .btn {
-                    width: 160px;
-                }
-                text-align: center;
-                margin: 30px;
-            }
-        }
         .sketch-video {
             &.container {
                 // max-width: 800px;
