@@ -1,25 +1,5 @@
 div[op-slick] {
     .slide {
         min-height: 450px;
-        .title {
-            margin: 20px;
-            font-size: 20px;
-            text-align: center;
-        }
-        .sketch-question {
-            &.container {
-                // max-width: 800px;
-                margin-top: 10px;
-                margin-bottom: 100px;
-            }
-            .title {
-                font-size: 40px;
-                text-align: left;
-                color: #FFFFFF;
-            }
-            .video {
-                text-align: center;
-            }
-        }
     }
 }

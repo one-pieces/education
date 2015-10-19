@@ -6,6 +6,7 @@ import angular = require('angular');
 import config = require('config');
 import baseController = require("./base-controller");
 import goalPageDirective = require("../../components/directives/base-pages/goal-page/goal-page-directive");
+import sketchQuestionDirective = require("../../components/directives/base-pages/sketch-question/sketch-question-directive");
 import sketchVideoDirective = require("../../components/directives/base-pages/sketch-video/sketch-video-directive");
 import models = require('../../components/models');
 import slickDirective = require("../../components/directives/slick/slick-directive");
@@ -19,6 +20,7 @@ export var controllerName = baseController.controllerName;
 angular.module(moduleName, [
     goalPageDirective.moduleName,
     models.moduleName,
+    sketchQuestionDirective.moduleName,
     sketchVideoDirective.moduleName,
     slickDirective.moduleName])
     .controller(baseController.controllerName, baseController.Controller);
