@@ -1,24 +1,24 @@
 /// <reference path='../../../../app.d.ts' />
-/// <amd-dependency path='css!./goal-page.css' />
-/// <amd-dependency path='text!components/directives/base-pages/goal-page/goal-page.html' />
+/// <amd-dependency path='css!./sketch-video.css' />
+/// <amd-dependency path='text!components/directives/base-pages/sketch-video/sketch-video.html' />
 import angular = require('angular');
 import config = require('config');
 
 'use strict';
 
-export var moduleName = config.appName + '.components.diretcives.basePages.goalPage';
-export var directiveName = 'opGoalPage';
-export var templateText = window.require('text!components/directives/base-pages/goal-page/goal-page.html');
+export var moduleName = config.appName + '.components.diretcives.basePages.sketchVideo';
+export var directiveName = 'opSketchVideo';
+export var templateText = window.require('text!components/directives/base-pages/sketch-video/sketch-video.html');
 
 export interface IScope extends ng.IScope {
-    goalPage: GoalPage;
+    sketchVideo: SketchVideo;
     someAttribute: string;
 }
 
 /**
- * GoalPage class for the directive
+ * SketchVideo class for the directive
  */
-export class GoalPage {
+export class SketchVideo {
     static $inject = ['scope'];
     
     someValue: string;
@@ -29,20 +29,20 @@ export class GoalPage {
 }
 
 /**
- * GoalPage-Directive
+ * SketchVideo-Directive
  * 
  * ### Sample usage:
  *
  * ```html
  *
  * <div>
- *     <op-goal-page some-attribute="AString">
- *     </op-goal-page>
+ *     <op-sketch-video some-attribute="AString">
+ *     </op-sketch-video>
  * </div>
  *
  * ```
  */
-export class GoalPageDirective implements ng.IDirective {
+export class SketchVideoDirective implements ng.IDirective {
     static $inject = ['$injector'];
     
     constructor(private $injector: ng.auto.IInjectorService) {}
@@ -55,12 +55,12 @@ export class GoalPageDirective implements ng.IDirective {
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
-        scope.goalPage = <GoalPage>
-        this.$injector.instantiate(GoalPage, { scope: scope, element: element, attrs: attrs });
+        scope.sketchVideo = <SketchVideo>
+        this.$injector.instantiate(SketchVideo, { scope: scope, element: element, attrs: attrs });
     }
 }
 
 angular.module(moduleName, [])
     .directive(directiveName, ['$injector', ($injector: ng.auto.IInjectorService) => {
-        return $injector.instantiate(GoalPageDirective);
+        return $injector.instantiate(SketchVideoDirective);
     }]);

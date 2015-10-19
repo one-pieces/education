@@ -1,0 +1,18 @@
+.title {
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+.sketch-video {
+    &.container {
+        max-width: 1100px;
+        margin-top: 10px;
+        margin-bottom: 100px;
+    }
+    .title {
+        color: #FFFFFF;
+    }
+    .video {
+        text-align: center;
+    }
+}
