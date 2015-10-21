@@ -24,7 +24,6 @@ export class FooterButton {
     static $inject = ['scope'];
 
     constructor(private scope: IScope) {
-        console.log('dddaa' + scope.isCheckButton);
     }
 }
 

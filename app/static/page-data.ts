@@ -20,6 +20,40 @@ export = [
         title: 'View the video, pay attention to the dialogue and learn through the context.',
         videoURL: 'http://player.youku.com/player.php/sid/XMTM2MDQ5MzUxMg==/v.swf'
     }, {
-        title: 'Select "restroom"'
+        keyword: 'restroom',
+        options: [
+            {
+                img: 'u28.jpg',
+                name: '房子/fánɡ zi'
+            },{
+                img: 'u37.jpg',
+                name: '超市/chāo shì'
+            },{
+                img: 'u42.jpg',
+                name: '办公室/bàn ɡōnɡ shì'
+            },{
+                img: 'u47.jpg',
+                name: '洗手间/xǐ shǒu jiān'
+            }
+        ],
+        answer: 3
+    }, {
+        keyword: 'bag',
+        options: [
+            {
+                img: 'img-choice-question_1/u16.jpg',
+                name: '手机/shǒu jī'
+            },{
+                img: 'img-choice-question_1/u27.jpg',
+                name: '包子/ bāo zi'
+            },{
+                img: 'img-choice-question_1/u32.jpg',
+                name: '包/ bāo'
+            },{
+                img: 'img-choice-question_1/u37.jpg',
+                name: '茶/chá'
+            }
+        ],
+        answer: 2
     }
 ];

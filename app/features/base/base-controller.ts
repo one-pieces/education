@@ -2,6 +2,8 @@
 
 import config = require('config');
 import models = require('../../components/models');
+import pageData = require('../../static/page-data');
+
 'use strict';
 
 export interface IScope extends ng.IScope {
@@ -17,8 +19,7 @@ export class BaseController {
     static $inject = [ '$scope',
                        models.user.serviceName ];
 
-    title = config.appName;
-    test = 'test';
+    pageData = pageData;
     currentUser: models.user.IUser;
 
     constructor(private $scope: IScope,

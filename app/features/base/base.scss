@@ -21,14 +21,18 @@
 }
 
 .section {
-    // padding-top: 70px;
-    // padding-bottom: 110px;
     // background-color: #5B5550;
     background-color: #FFFFFF;
 }
 
 .answer {
     background-color: rgb(253, 134, 9);
+    &.correct {
+        background-color: #2EA9DF;
+        a.btn {
+            color: #2EA9DF;
+        }
+    }
     text-align: center;
     h1 {
         color: #FFFFFF;

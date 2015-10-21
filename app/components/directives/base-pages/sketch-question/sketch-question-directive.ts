@@ -13,7 +13,7 @@ export var templateText = window.require('text!components/directives/base-pages/
 
 export interface IScope extends ng.IScope {
     sketchQuestion: SketchQuestion;
-    // data: any;
+    data: any;
 }
 
 /**
@@ -21,17 +21,22 @@ export interface IScope extends ng.IScope {
  */
 export class SketchQuestion {
     static $inject = ['scope'];
-    
-    optionCards: any;
+
+    result = false;
+    choice: number;
     isClickButtonDisabled: boolean;
     isSlideShown: boolean;
 
     constructor(private scope: IScope) {
         this.isSlideShown = false;
         this.isClickButtonDisabled = true;
+        console.log(scope.data);
     }
 
     showPageSlide() {
+        if (this.choice === this.scope.data.answer) {
+            this.result = true;
+        }
         this.isSlideShown = true;
     }
 
@@ -39,8 +44,16 @@ export class SketchQuestion {
         this.isSlideShown = false;
     }
 
-    clickCard() {
+    clickCard(index: number) {
+        this.choice = index;
         this.isClickButtonDisabled = false;
+        this.scope.data.options.forEach((option, i) => {
+            if(i === index) {
+                option.isChecked = true;
+            } else {
+                option.isChecked = false;
+            }
+        });
     }
 }
 
@@ -67,7 +80,7 @@ export class SketchQuestionDirective implements ng.IDirective {
     template = templateText;
     // transclude = true;
     scope = {
-        // data: '='
+        data: '='
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {

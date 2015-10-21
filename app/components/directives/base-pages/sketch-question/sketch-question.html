@@ -1,44 +1,21 @@
 <div class="sketch-question container">
-    <h3 class="title">Select "restroom"</h3>
+    <h3 class="title">Select "{{data.keyword}}"</h3>
     <div class="row">
-        <div class="col-sm-3">
-            <div class="thumbnail" ng-click="sketchQuestion.clickCard()">
-                <img src="/static/images/u28.jpg">
+        <div class="col-sm-3" ng-repeat="option in data.options">
+            <div class="thumbnail" ng-click="sketchQuestion.clickCard($index)" ng-class="{'isChecked': option.isChecked}">
+                <img src="/static/images/{{option.img}}">
                 <div class="caption">
-                    <h3>房子/fánɡ zi</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="thumbnail">
-                <img src="/static/images/u37.jpg">
-                <div class="caption">
-                    <h3>超市/chāo shì</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="thumbnail">
-                <img src="/static/images/u42.jpg">
-                <div class="caption">
-                    <h3>办公室/bàn ɡōnɡ shì</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="thumbnail">
-                <img src="/static/images/u47.jpg">
-                <div class="caption">
-                    <h3>洗手间/xǐ shǒu jiān</h3>
+                    <h3>{{option.name}}</h3>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <pageslide ps-open="sketchQuestion.isSlideShown" ps-side="bottom" ps-size="400px" ps-class="answer" ps-container="pageSlide">
+        <pageslide ps-open="sketchQuestion.isSlideShown" ps-side="bottom" ps-size="400px" ps-class="answer" ng-class="{'correct': sketchQuestion.result}" ps-container="pageSlide">
             <div class="container">
                 <div class="row">
-                    <h1>restroom= 洗手间/xǐ shǒu jiān</h1>
+                    <h1 ng-show="sketchQuestion.result">You are correct !</h1>
+                    <h1>{{data.keyword}}= {{data.options[data.answer].name}}</h1>
                     <a class="btn slick-arrow next" href="#" ng-click="sketchQuestion.closePageSlide()">Continue</a>
                 </div>
             </div>
