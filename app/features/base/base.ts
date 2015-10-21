@@ -5,6 +5,7 @@
 import angular = require('angular');
 import config = require('config');
 import baseController = require("./base-controller");
+import footerButtonDirective = require('../../components/directives/footer-button/footer-button-directive');
 import goalPageDirective = require("../../components/directives/base-pages/goal-page/goal-page-directive");
 import sketchQuestionDirective = require("../../components/directives/base-pages/sketch-question/sketch-question-directive");
 import sketchVideoDirective = require("../../components/directives/base-pages/sketch-video/sketch-video-directive");
@@ -18,6 +19,8 @@ export var template = window.require('text!features/base/base.html');
 export var controllerName = baseController.controllerName;
 
 angular.module(moduleName, [
+    'pageslide-directive',
+    footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
     models.moduleName,
     sketchQuestionDirective.moduleName,

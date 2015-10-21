@@ -20,7 +20,7 @@
             'slick-carousel': 'vendor/slick-carousel/slick.min',
             text: 'vendor/requirejs-text/text',
             'ui.router': 'vendor/angular-ui-router/angular-ui-router',
-            'ng.pageslide': 'vender/ng-pageslide/index'
+            'ng-pageslide': 'vendor/ng-pageslide/index' //https://github.com/dpiccone/ng-pageslide
         },
         shim: {
             angular: {

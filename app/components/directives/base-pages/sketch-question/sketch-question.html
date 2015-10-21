@@ -2,10 +2,10 @@
     <h3 class="title">Select "restroom"</h3>
     <div class="row">
         <div class="col-sm-3">
-            <div class="thumbnail">
+            <div class="thumbnail" ng-click="sketchQuestion.clickCard()">
                 <img src="/static/images/u28.jpg">
                 <div class="caption">
-                    <h3>label</h3>
+                    <h3>房子/fánɡ zi</h3>
                 </div>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <div class="thumbnail">
                 <img src="/static/images/u37.jpg">
                 <div class="caption">
-                    <h3>label</h3>
+                    <h3>超市/chāo shì</h3>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
             <div class="thumbnail">
                 <img src="/static/images/u42.jpg">
                 <div class="caption">
-                    <h3>label</h3>
+                    <h3>办公室/bàn ɡōnɡ shì</h3>
                 </div>
             </div>
         </div>
@@ -29,9 +29,20 @@
             <div class="thumbnail">
                 <img src="/static/images/u47.jpg">
                 <div class="caption">
-                    <h3>label</h3>
+                    <h3>洗手间/xǐ shǒu jiān</h3>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <pageslide ps-open="sketchQuestion.isSlideShown" ps-side="bottom" ps-size="400px" ps-class="answer" ps-container="pageSlide">
+            <div class="container">
+                <div class="row">
+                    <h1>restroom= 洗手间/xǐ shǒu jiān</h1>
+                    <a class="btn slick-arrow next" href="#" ng-click="sketchQuestion.closePageSlide()">Continue</a>
+                </div>
+            </div>
+        </pageslide>
+    </div>
 </div>
+<op-footer-button is-check-button="true" is-click-button-disabled="sketchQuestion.isClickButtonDisabled" click-event="sketchQuestion.showPageSlide()"></op-footer-button>

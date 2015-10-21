@@ -1,0 +1,13 @@
+<footer class="footer">
+    <div ng-show="isCheckButton">
+        <ul class="list-inline">
+            <li><a class="btn btn-lg" href="#" ng-click="clickEvent()" ng-disabled="isClickButtonDisabled">Check</a></li>
+        </ul>
+    </div>
+    <div ng-show="!isCheckButton">
+        <ul class="list-inline">
+            <li><a class="btn btn-lg slick-arrow prev" href="#">Previous</a></li>
+            <li><a class="btn btn-lg slick-arrow next" href="#">Next</a></li>
+        </ul>
+    </div>
+</footer>

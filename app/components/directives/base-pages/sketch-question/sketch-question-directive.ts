@@ -1,4 +1,5 @@
 /// <referencepath='../../../../app.d.ts' />
+/// <amd-dependency path='ng-pageslide' />
 /// <amd-dependency path='css!./sketch-question.css' />
 /// <amd-dependency path='text!components/directives/base-pages/sketch-question/sketch-question.html' />
 import angular = require('angular');
@@ -12,7 +13,7 @@ export var templateText = window.require('text!components/directives/base-pages/
 
 export interface IScope extends ng.IScope {
     sketchQuestion: SketchQuestion;
-    someAttribute: string;
+    // data: any;
 }
 
 /**
@@ -21,10 +22,25 @@ export interface IScope extends ng.IScope {
 export class SketchQuestion {
     static $inject = ['scope'];
     
-    someValue: string;
+    optionCards: any;
+    isClickButtonDisabled: boolean;
+    isSlideShown: boolean;
 
     constructor(private scope: IScope) {
-        this.someValue = 'goal-page-directive';
+        this.isSlideShown = false;
+        this.isClickButtonDisabled = true;
+    }
+
+    showPageSlide() {
+        this.isSlideShown = true;
+    }
+
+    closePageSlide() {
+        this.isSlideShown = false;
+    }
+
+    clickCard() {
+        this.isClickButtonDisabled = false;
     }
 }
 
@@ -51,7 +67,7 @@ export class SketchQuestionDirective implements ng.IDirective {
     template = templateText;
     // transclude = true;
     scope = {
-        someAttribute: '@?'
+        // data: '='
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {

@@ -4,7 +4,7 @@ export = [
     {
         title: 'Goal',
         content: 
-            'In this lesson we\'re going to have you master the following target langauge:<br/> +
+            'In this lesson we\'re going to have you master the following target langauge:<br/>' +
             '&nbsp;&nbsp;&nbsp;zài … … li / shɑnɡ<br/>' +
             '&nbsp;&nbsp;&nbsp;在  … … 里 / 上<br/>' +
             '&nbsp;&nbsp;&nbsp;wèi shén me ？ yīn wèi … …<br/>' +
