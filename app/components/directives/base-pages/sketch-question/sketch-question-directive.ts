@@ -47,7 +47,7 @@ export class SketchQuestion {
     clickCard(index: number) {
         this.choice = index;
         this.isClickButtonDisabled = false;
-        this.scope.data.options.forEach((option, i) => {
+        this.scope.data.options.forEach((option: any, i: any) => {
             if(i === index) {
                 option.isChecked = true;
             } else {
