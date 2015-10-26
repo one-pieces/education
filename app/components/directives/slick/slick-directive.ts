@@ -61,7 +61,7 @@ export var directiveName = 'opSlick';
 
 export class SlickDirective implements ng.IDirective {
     static $inject = ['$injector'];
-    constructor(private $injector: ng.auto.IInjectorService) {}
+    constructor(private $injector: ng.auto.IInjectorService) { }
 
     restrict = 'AE';
     scope = {
@@ -109,41 +109,58 @@ export class SlickDirective implements ng.IDirective {
     };
 
     link = (scope: any, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
+        // var isInitialized = false;
         var slider: any = $(element);
-        // console.log(slider);
-        slider.slick({
-            accessibility: scope.accessibility !== 'false',
-            arrows: scope.arrows !== 'false',
-            asNavFor: scope.asNavFor,
-            autoplay: scope.autoplay === 'true',
-            autoplaySpeed: scope.autoplaySpeed != null ? parseInt(scope.autoplaySpeed, 10) : 3000,
-            centerMode: scope.centerMode === 'true',
-            centerPadding: scope.centerPadding || '50px',
-            cssEase: scope.cssEase || 'ease',
-            dots: scope.dots === 'true',
-            draggable: scope.draggable === 'true',
-            easing: scope.easing || 'linear',
-            fade: scope.fade === 'true',
-            focusOnSelect: scope.focusOnSelect === 'true',
-            infinite: scope.infinite !== 'false',
-            initialSlide: scope.initialSlide != null ? parseInt(scope.initialSlide, 10) : 0,
-            lazyLoad: scope.lazyLoad || 'ondemand',
-            //This needs to select the DOM node instead of be a string to prevent arrow from getting removed when switching breakpoints
-            nextArrow: $(scope.nextArrow),
-            pauseOnHover: scope.pauseOnHover !== 'false',
-            //This needs to select the DOM node instead of be a string to prevent arrow from getting removed when switching breakpoints
-            prevArrow: $(scope.prevArrow),
-            responsive: scope.responsive,
-            slide: scope.slide || 'div',
-            slidesToShow: scope.slidesToShow,
-            slidesToScroll: scope.slidesToScroll != null ? parseInt(scope.slidesToScroll, 10) : 1,
-            speed: scope.speed != null ? parseInt(scope.speed, 10) : 300,
-            swipe: scope.swipe !== 'false',
-            touchMove: scope.touchMove !== 'false',
-            touchThreshold: scope.touchThreshold ? parseInt(scope.touchThreshold, 10) : 5,
-            useCSS: scope.useCss !== 'false',
-            vertical: scope.vertical === 'true'
-        });
+
+        function initializeSlick() {
+            slider.slick({
+                accessibility: scope.accessibility !== 'false',
+                arrows: scope.arrows !== 'false',
+                asNavFor: scope.asNavFor,
+                autoplay: scope.autoplay === 'true',
+                autoplaySpeed: scope.autoplaySpeed != null ? parseInt(scope.autoplaySpeed, 10) : 3000,
+                centerMode: scope.centerMode === 'true',
+                centerPadding: scope.centerPadding || '50px',
+                cssEase: scope.cssEase || 'ease',
+                dots: scope.dots === 'true',
+                draggable: scope.draggable === 'true',
+                easing: scope.easing || 'linear',
+                fade: scope.fade === 'true',
+                focusOnSelect: scope.focusOnSelect === 'true',
+                infinite: scope.infinite !== 'false',
+                initialSlide: scope.initialSlide != null ? parseInt(scope.initialSlide, 10) : 0,
+                lazyLoad: scope.lazyLoad || 'ondemand',
+                //This needs to select the DOM node instead of be a string to prevent arrow from getting removed when switching breakpoints
+                nextArrow: $(scope.nextArrow),
+                pauseOnHover: scope.pauseOnHover !== 'false',
+                //This needs to select the DOM node instead of be a string to prevent arrow from getting removed when switching breakpoints
+                prevArrow: $(scope.prevArrow),
+                responsive: scope.responsive,
+                slide: scope.slide || 'div',
+                slidesToShow: scope.slidesToShow,
+                slidesToScroll: scope.slidesToScroll != null ? parseInt(scope.slidesToScroll, 10) : 1,
+                speed: scope.speed != null ? parseInt(scope.speed, 10) : 300,
+                swipe: scope.swipe !== 'false',
+                touchMove: scope.touchMove !== 'false',
+                touchThreshold: scope.touchThreshold ? parseInt(scope.touchThreshold, 10) : 5,
+                useCSS: scope.useCss !== 'false',
+                vertical: scope.vertical === 'true'
+            });
+        }
+
+        console.log(scope.slidesToShow);
+        if (scope.initOnload) {
+            // isInitialized = false;
+            scope.$watch('data', (newVal: any[], oldVal: any[]) => {
+                if (newVal != null) {
+                    // if (isInitialized) {
+                    initializeSlick();
+                    // }
+                }
+            });
+        } else {
+            initializeSlick();
+        }
     }
 }
 

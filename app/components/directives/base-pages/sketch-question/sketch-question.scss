@@ -6,13 +6,30 @@
     }
     .title {
         margin: 20px;
-        font-size: 40px;
         text-align: left;
+        color: #2EA9DF;
+    }
+    .keyword {
+        color: #2EA9DF;
+        margin: 100px 15px;
     }
     .thumbnail {
         cursor: pointer;
+        &.isChecked {
+            background-color: #2EA9DF;
+            .caption {
+                color: #fff;
+            }
+        }
     }
-    .isChecked {
-        background-color: #2EA9DF;
+    .option-btn {
+        width: 250px;
+        color: #000;
+        cursor: pointer;
+        border-radius: 30px;
+        &.isChecked {
+            color: #fff;
+            background-color: #2EA9DF;
+        }
     }
 }

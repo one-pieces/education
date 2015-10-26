@@ -10,18 +10,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div op-slick infinite="false" prev-arrow=".base .prev" next-arrow=".base .next" fade="true">
-                        <div class="slide">
+                    <div op-slick infinite="false" init-onload="true" data="base.sketchQuestionData" prev-arrow=".base .prev" next-arrow=".base .next" fade="true">
+                        <div class="slide" tabindex="-1">
                             <op-goal-page></op-goal-page>
                         </div>
-                        <div class="slide">
+                        <div class="slide" tabindex="-1">
                             <op-sketch-video></op-sketch-video>
                         </div>
-                        <div class="slide">
-                            <op-sketch-question data="base.pageData[2]"></op-sketch-question>
-                        </div>
-                        <div class="slide">
-                            <op-sketch-question data="base.pageData[3]"></op-sketch-question>
+                        <div class="slide" ng-repeat="sketchQuestion in base.sketchQuestionData">
+                            <op-sketch-question data="sketchQuestion"></op-sketch-question>
                         </div>
                     </div>
                 </div>

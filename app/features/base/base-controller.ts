@@ -2,7 +2,8 @@
 
 import config = require('config');
 import models = require('../../components/models');
-import pageData = require('../../static/page-data');
+import pageData = require('../../static/data/page-data');
+import sketchQuestionData = require('../../static/data/sketch-question-data');
 
 'use strict';
 
@@ -20,6 +21,7 @@ export class BaseController {
                        models.user.serviceName ];
 
     pageData = pageData;
+    sketchQuestionData = sketchQuestionData;
     currentUser: models.user.IUser;
 
     constructor(private $scope: IScope,
