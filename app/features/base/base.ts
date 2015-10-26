@@ -2,6 +2,7 @@
 /// <amd-dependency path='css!./base.css' />
 /// <amd-dependency path='text!features/base/base.html' />
 
+
 import angular = require('angular');
 import config = require('config');
 import baseController = require("./base-controller");
@@ -20,6 +21,9 @@ export var controllerName = baseController.controllerName;
 
 angular.module(moduleName, [
     'pageslide-directive',
+    'mouseCapture',
+    'dragging',
+    'flowChart',
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
     models.moduleName,

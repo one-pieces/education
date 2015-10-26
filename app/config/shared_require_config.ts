@@ -20,7 +20,12 @@
             'slick-carousel': 'vendor/slick-carousel/slick.min',
             text: 'vendor/requirejs-text/text',
             'ui.router': 'vendor/angular-ui-router/angular-ui-router',
-            'ng-pageslide': 'vendor/ng-pageslide/index' //https://github.com/dpiccone/ng-pageslide
+            'ng-pageslide': 'vendor/ng-pageslide/index', //https://github.com/dpiccone/ng-pageslide
+            'mouse-capture-service': 'components/directives/flowchart/mouse_capture_service',
+            'dragging-service': 'components/directives/flowchart/dragging_service',
+            'flow-chart': 'components/directives/flowchart/flowchart_directive'
+
+
         },
         shim: {
             angular: {
@@ -44,7 +49,17 @@
             },
             'ng-pageslide': {
                 deps: ['angular']
-            }
+            },
+            'mouse-capture-service': {
+                deps: ['angular']
+            },
+            'dragging-service': {
+                deps: ['angular']
+            },
+
+            'flow-chart': {
+                deps: ['angular']
+            },
         }
     });
 })();

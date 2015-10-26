@@ -1,8 +1,11 @@
 /// <reference path='../../app.d.ts' />
-
+/// <amd-dependency path='mouse-capture-service' />
+/// <amd-dependency path='dragging-service' />
+/// <amd-dependency path='flow-chart' />
 import config = require('config');
 import models = require('../../components/models');
 import pageData = require('../../static/page-data');
+import drawLineData = require('../../static/draw-line-data');
 
 'use strict';
 
@@ -20,11 +23,13 @@ export class BaseController {
                        models.user.serviceName ];
 
     pageData = pageData;
+    drawLineData = drawLineData;
     currentUser: models.user.IUser;
 
     constructor(private $scope: IScope,
                 private UserModel: models.user.IUserStatic) {
         $scope.base = this;
+        console.log(this.drawLineData);
         this.UserModel.$find('_0_1').$then((user) => {
             user.ui.fullName = user.givenName + ' ' + user.familyName;
             this.currentUser = user;
