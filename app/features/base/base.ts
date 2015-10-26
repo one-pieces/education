@@ -7,9 +7,10 @@ import config = require('config');
 import baseController = require("./base-controller");
 import footerButtonDirective = require('../../components/directives/footer-button/footer-button-directive');
 import goalPageDirective = require("../../components/directives/base-pages/goal-page/goal-page-directive");
-import sketchQuestionDirective = require("../../components/directives/base-pages/sketch-question/sketch-question-directive");
-import sketchVideoDirective = require("../../components/directives/base-pages/sketch-video/sketch-video-directive");
 import models = require('../../components/models');
+import sketchVideoDirective = require("../../components/directives/base-pages/sketch-video/sketch-video-directive");
+import sketchQuestionDirective = require("../../components/directives/base-pages/sketch-question/sketch-question-directive");
+import scorePageDirective = require("../../components/directives/base-pages/score-page/score-page-directive");
 import slickDirective = require("../../components/directives/slick/slick-directive");
 
 'use strict';
@@ -23,6 +24,7 @@ angular.module(moduleName, [
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
     models.moduleName,
+    scorePageDirective.moduleName,
     sketchQuestionDirective.moduleName,
     sketchVideoDirective.moduleName,
     slickDirective.moduleName])

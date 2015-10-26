@@ -20,6 +20,8 @@ export class BaseController {
     static $inject = [ '$scope',
                        models.user.serviceName ];
 
+    sketchQuestionScore = 0;
+    sketchQuestionTotleScore = 0;
     pageData = pageData;
     sketchQuestionData = sketchQuestionData;
     currentUser: models.user.IUser;
@@ -31,6 +33,16 @@ export class BaseController {
             user.ui.fullName = user.givenName + ' ' + user.familyName;
             this.currentUser = user;
             console.log('return user success, user info: ' + user.givenName);
+        });
+
+        this.sketchQuestionData.forEach(sketchQuestion => {
+            this.sketchQuestionTotleScore += sketchQuestion.score;
+        });
+
+            $scope.$on('sketch-question', (event: any, message: any) => {
+            if (message.result) {
+                this.sketchQuestionScore += this.sketchQuestionData[message.id].score;
+            }
         });
     }
 }

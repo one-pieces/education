@@ -30,21 +30,22 @@ export class SketchQuestion {
     constructor(private scope: IScope) {
         this.isSlideShown = false;
         this.isClickButtonDisabled = true;
-        console.log(scope.data);
     }
 
-    showPageSlide() {
+    checkAnswer() {
         if (this.choice === this.scope.data.answer) {
             this.result = true;
         }
+        this.scope.$emit('sketch-question',
+            { id: this.scope.data.id, result: this.result });
         this.isSlideShown = true;
     }
 
-    closePageSlide() {
+    continue() {
         this.isSlideShown = false;
     }
 
-    clickCard(index: number) {
+    clickOption(index: number) {
         this.choice = index;
         this.isClickButtonDisabled = false;
         this.scope.data.options.forEach((option: any, i: number) => {

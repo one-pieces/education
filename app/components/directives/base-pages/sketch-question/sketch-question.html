@@ -3,7 +3,7 @@
         <h2 class="title">Select "{{data.keyword}}"</h2>
         <div class="row">
             <div class="col-sm-3" ng-repeat="option in data.options">
-                <div class="thumbnail" ng-click="sketchQuestion.clickCard($index)" ng-class="{'isChecked': option.isChecked}">
+                <div class="thumbnail" ng-click="sketchQuestion.clickOption($index)" ng-class="{'isChecked': option.isChecked}">
                     <img src="/static/images/{{option.img}}">
                     <div class="caption">
                         <h3>{{option.name}}</h3>
@@ -17,7 +17,7 @@
         <h2 class="keyword">{{data.keyword}}</h2>
         <div class="row">
             <div class="col-sm-6" ng-repeat="option in data.options">
-                <div class="option-btn btn-lg" ng-click="sketchQuestion.clickCard($index)" ng-class="{'isChecked': option.isChecked}">
+                <div class="option-btn btn-lg" ng-click="sketchQuestion.clickOption($index)" ng-class="{'isChecked': option.isChecked}">
                     <h2>{{option.label}}. {{option.name}}</h2>
                 </div>
             </div>
@@ -29,10 +29,10 @@
                 <div class="row">
                     <h1 ng-show="sketchQuestion.result">You are correct !</h1>
                     <h1>{{data.keyword}}= {{data.options[data.answer].name}}</h1>
-                    <a class="btn slick-arrow next" href="#" ng-click="sketchQuestion.closePageSlide()">Continue</a>
+                    <a class="btn slick-arrow next" href="#" ng-click="sketchQuestion.continue()">Continue</a>
                 </div>
             </div>
         </pageslide>
     </div>
 </div>
-<op-footer-button is-check-button="true" is-click-button-disabled="sketchQuestion.isClickButtonDisabled" click-event="sketchQuestion.showPageSlide()"></op-footer-button>
+<op-footer-button is-check-button="true" is-click-button-disabled="sketchQuestion.isClickButtonDisabled" click-event="sketchQuestion.checkAnswer()"></op-footer-button>

@@ -20,6 +20,7 @@ export = [
             }
         ],
         answer: 3,
+        score: 20,
         isImgChoice: true
     }, {
         id: '1',
@@ -40,6 +41,7 @@ export = [
             }
         ],
         answer: 2,
+        score: 20,
         isImgChoice: true
     }, {
         id: '2',
@@ -60,6 +62,7 @@ export = [
             }
         ],
         answer: 2,
+        score: 20,
         isImgChoice: true
     }, {
         id: '3',
@@ -80,6 +83,7 @@ export = [
             }
         ],
         answer: 2,
+        score: 20,
         isImgChoice: true
     }, {
         id: '4',
@@ -94,6 +98,7 @@ export = [
             }
         ],
         answer: 0,
+        score: 20,
         isImgChoice: false
     }, {
         id: '5',
@@ -108,6 +113,7 @@ export = [
             }
         ],
         answer: 0,
+        score: 20,
         isImgChoice: false
     }, {
         id: '6',
@@ -122,6 +128,7 @@ export = [
             }
         ],
         answer: 0,
+        score: 20,
         isImgChoice: false
     }, {
         id: '7',
@@ -136,6 +143,7 @@ export = [
             }
         ],
         answer: 1,
+        score: 20,
         isImgChoice: false
     }
 ];
