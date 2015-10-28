@@ -1,7 +1,4 @@
 /// <reference path='../../app.d.ts' />
-/// <amd-dependency path='mouse-capture-service' />
-/// <amd-dependency path='dragging-service' />
-/// <amd-dependency path='flow-chart' />
 import config = require('config');
 import models = require('../../components/models');
 import pageData = require('../../static/page-data');

@@ -16,23 +16,19 @@ export class MouseCaptureService {
     mouseCaptureConfig: any;
     constructor(private $rootScope: ng.IRootScopeService) {
         this.$element = document;
-        mouseCaptureConfig = null;
+        this.mouseCaptureConfig = null;
     }
 
     mouseMove(event: any): void {
         if (this.mouseCaptureConfig && this.mouseCaptureConfig.mouseMove) {
-
-            this.mouseCaptureConfig.mouseMove(evt);
-
+            this.mouseCaptureConfig.mouseMove(event);
             this.$rootScope.$digest();
         }
     }
 
     mouseUp(event: any): void {
         if (this.mouseCaptureConfig && this.mouseCaptureConfig.mouseUp) {
-
-            this.mouseCaptureConfig.mouseUp(evt);
-
+            this.mouseCaptureConfig.mouseUp(event);
             this.$rootScope.$digest();
         }
     }

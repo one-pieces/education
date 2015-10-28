@@ -1,8 +1,8 @@
-/// <reference path='../../../../app.d.ts' />
-/// <amd-dependency path='css!./goal-page.css' />
-/// <amd-dependency path='text!components/directives/base-pages/goal-page/goal-page.html' />
+/// <reference path='../../../app.d.ts' />
+
 import angular = require('angular');
 import config = require('config');
+import mouseCaptureService = require('components/services/mouse-capture-service');
 
 'use strict';
 
@@ -10,20 +10,22 @@ export var moduleName = config.appName + '.components.directive.mouseCapture';
 export var directiveName = 'mouseCapture';
 
 export interface IScope extends ng.IScope {
-    goalPage: GoalPage;
+    mouseCapture: MouseCapture;
     someAttribute: string;
 }
 
 /**
  * GoalPage class for the directive
  */
-export class GoalPage {
-    static $inject = ['scope'];
-    
-    someValue: string;
+export class MouseCapture {
+    static $inject = [ 'scope', 'element', 'attrs',  mouseCaptureService.serviceName];
 
-    constructor(private scope: IScope) {
-        this.someValue = 'goal-page-directive';
+    constructor(private scope: IScope,
+                private element: JQuery,
+                private attrs: ng.IAttributes,
+                private mouseCaptureService: mouseCaptureService.Service
+    ){
+        mouseCaptureService.registerElement(element);
     }
 }
 
@@ -35,31 +37,26 @@ export class GoalPage {
  * ```html
  *
  * <div>
- *     <op-goal-page some-attribute="AString">
- *     </op-goal-page>
+ *     <mouse-capture some-attribute="AString">
+ *     </mouse-capture>
  * </div>
  *
  * ```
  */
-export class GoalPageDirective implements ng.IDirective {
-    static $inject = ['$injector'];
+export class MouseCaptureDirective implements ng.IDirective {
+    static $inject = [ '$injector'];
     
     constructor(private $injector: ng.auto.IInjectorService) {}
-
     restrict = 'E';
-    template = templateText;
-    // transclude = true;
-    scope = {
-        someAttribute: '@?'
-    };
+    scope = {};
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
-        scope.goalPage = <GoalPage>
-        this.$injector.instantiate(GoalPage, { scope: scope, element: element, attrs: attrs });
+        scope.mouseCapture = <MouseCapture>
+        this.$injector.instantiate(MouseCapture, { scope: scope, element: element, attrs: attrs });
     }
 }
 
-angular.module(moduleName, [])
+angular.module(moduleName, [mouseCaptureService.moduleName])
     .directive(directiveName, ['$injector', ($injector: ng.auto.IInjectorService) => {
-        return $injector.instantiate(GoalPageDirective);
+        return $injector.instantiate(MouseCaptureDirective);
     }]);

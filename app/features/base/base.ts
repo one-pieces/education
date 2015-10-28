@@ -21,9 +21,6 @@ export var controllerName = baseController.controllerName;
 
 angular.module(moduleName, [
     'pageslide-directive',
-    'mouseCapture',
-    'dragging',
-    'flowChart',
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
     models.moduleName,
