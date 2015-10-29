@@ -3,6 +3,7 @@
 /// <amd-dependency path='text!components/directives/base-pages/video-comprehension/video-comprehension.html' />
 import angular = require('angular');
 import config = require('config');
+import choiceDirective = require('../../choice/choice-directive');
 
 'use strict';
 
@@ -21,46 +22,9 @@ export interface IScope extends ng.IScope {
 export class VideoComprehension {
     static $inject = ['scope', '$sce'];
 
-    result = false;
-    choice: number;
-    problemIndex: number;
     trustedVideoUrl: string;
-    isOptionClicked = false;
-    isSubmitted = false;
-
     constructor(private scope: IScope, private $sce: ng.ISCEService) {
         this.trustedVideoUrl = this.$sce.trustAsResourceUrl(scope.data.videoUrl);
-    }
-
-    clickOption(index: number, parentIndex: number) {
-        if (!this.isSubmitted) {
-            this.choice = index;
-            this.problemIndex = parentIndex;
-            this.isOptionClicked = true;
-            this.scope.data.problems[parentIndex].options.forEach((option: any, i: number) => {
-                if (i === index) {
-                    option.isClicked = true;
-                } else {
-                    option.isClicked = false;
-                }
-            });
-        }
-    }
-    clickSubmit() {
-        this.isSubmitted = true;
-        var problem = this.scope.data.problems[this.problemIndex];
-        problem.options[problem.answer].isCorrect = true;
-        if (this.choice === problem.answer) {
-            this.result = true;
-        } else {
-            this.result = false;
-        }
-        this.scope.$emit('video-comprehension',
-            { id: this.scope.data.id, problemIndex: this.problemIndex, result: this.result });
-    }
-    clickNext() {
-        this.isOptionClicked = false;
-        this.isSubmitted = false;
     }
 }
 
@@ -96,7 +60,7 @@ export class VideoComprehensionDirective implements ng.IDirective {
     }
 }
 
-angular.module(moduleName, [])
+angular.module(moduleName, [choiceDirective.moduleName])
     .directive(directiveName, ['$injector', ($injector: ng.auto.IInjectorService) => {
         return $injector.instantiate(VideoComprehensionDirective);
     }]);

@@ -23,7 +23,6 @@ export class ScorePage {
     static $inject = ['scope'];
 
     constructor(private scope: IScope) {
-        console.log(scope.label);
     }
 }
 

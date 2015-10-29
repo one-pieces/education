@@ -3,45 +3,4 @@
         margin-top: 50px;
         color: rgb(10, 144, 214);
     }
-    .title {
-        font-size: 15px;
-        font-weight: 900;
-        margin-bottom: 20px;
-    }
-    .question {
-        .phoneticize {
-            margin-left: 15px;
-        }
-        .question-title{
-            font-size: 16px;
-        }
-    }
-    .v-footer {
-        text-align: center;
-        margin-top: 10px;
-        .btn {
-            width: 150px;
-            background-color: rgb(10, 144, 214);
-        }
-    }
-    .option-box {
-        margin-top: 15px;
-    }
-    .option {
-        border: 3px solid rgb(10, 144, 214);
-        border-radius: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-        &.isClicked {
-            color: #000;
-            background-color: rgb(225, 231, 236);
-        }
-        &.isCorrect {
-            color: #fff;
-            background-color: rgb(10, 144, 214);
-        }
-    }
-    .no-padding {
-        padding: 0;
-    }
 }

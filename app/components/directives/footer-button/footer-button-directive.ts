@@ -1,4 +1,4 @@
-/// <r e ferenc e  path='../../../../app.d.ts' />
+/// <reference path='../../../app.d.ts' />
 /// <amd-dependency path='css!./footer-button.css' />
 /// <amd-dependency path='text!components/directives/footer-button/footer-button.html' />
 import angular = require('angular');
