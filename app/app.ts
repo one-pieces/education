@@ -2,6 +2,7 @@
 /// <amd-dependency path='bootstrap-css' />
 /// <amd-dependency path='css!/vendor/bootstrap-css/bootstrap.min.css' />
 /// <amd-dependency path='css!/styles/default.css' />
+/// <amd-dependency path='ngSanitize' />
 
 import $ = require('jquery');
 import angular = require('angular');
@@ -12,7 +13,7 @@ import routes = require('./routes');
 
 var moduleName = config.appName;
 
-var app = angular.module(moduleName, [routes.moduleName]);
+var app = angular.module(moduleName, [routes.moduleName, 'ngSanitize']);
 
 app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', 
     function($urlRouterProvider: ng.ui.IUrlRouterProvider, 

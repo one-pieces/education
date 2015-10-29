@@ -6,16 +6,16 @@ export = [
         keyword: 'restroom',
         options: [
             {
-                img: 'u28.jpg',
+                img: 'img-choice-question/0/u28.jpg',
                 name: '房子/fánɡ zi'
             },{
-                img: 'u37.jpg',
+                img: 'img-choice-question/0/u37.jpg',
                 name: '超市/chāo shì'
             },{
-                img: 'u42.jpg',
+                img: 'img-choice-question/0/u42.jpg',
                 name: '办公室/bàn ɡōnɡ shì'
             },{
-                img: 'u47.jpg',
+                img: 'img-choice-question/0/u47.jpg',
                 name: '洗手间/xǐ shǒu jiān'
             }
         ],

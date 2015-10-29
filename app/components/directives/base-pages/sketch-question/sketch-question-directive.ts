@@ -1,5 +1,5 @@
 /// <referencepath='../../../../app.d.ts' />
-/// <amd-dependency path='ng-pageslide' />
+/// <amd-dependency path='ngPageslide' />
 /// <amd-dependency path='css!./sketch-question.css' />
 /// <amd-dependency path='text!components/directives/base-pages/sketch-question/sketch-question.html' />
 import angular = require('angular');

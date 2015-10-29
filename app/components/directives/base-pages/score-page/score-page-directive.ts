@@ -12,6 +12,7 @@ export var templateText = window.require('text!components/directives/base-pages/
 
 export interface IScope extends ng.IScope {
     scorePage: ScorePage;
+    label: string;
     score: string;
 }
 
@@ -22,6 +23,7 @@ export class ScorePage {
     static $inject = ['scope'];
 
     constructor(private scope: IScope) {
+        console.log(scope.label);
     }
 }
 
@@ -48,7 +50,8 @@ export class ScorePageDirective implements ng.IDirective {
     template = templateText;
     // transclude = true;
     scope = {
-        score: '@?'
+        label: '@',
+        score: '@'
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {

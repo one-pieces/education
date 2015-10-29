@@ -1,0 +1,44 @@
+<div class="video-comprehension container">
+    <div class="row">
+        <div class="col-sm-6">
+            <!-- <embed src="http://player.youku.com/player.php/sid/XMTM2MDQ5MzUxMg==/v.swf" allowFullScreen="true" quality="high" width="100%" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+            <video ng-src="{{videoComprehension.trustedVideoUrl}}" controls="controls"></video> -->
+            <iframe height="400" width="100%" src="{{videoComprehension.trustedVideoUrl}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-sm-6">
+            <div class="title">
+                Select the correct answer. Before making the selection, you may listen to the question and options by clicking on the audio button.
+            </div>
+            <div op-slick infinite="false" init-onload="true" data="data.problems" prev-arrow=".base .video-comprehension .prev" next-arrow=".base .video-comprehension-next" fade="true">
+                <div class="question" ng-repeat="problem in data.problems">
+                    <div class="phoneticize">{{problem.question.phoneticize}}</div>
+                    <div class="question-title">{{problem.question.title}}</div>
+                    <div class="option-box" ng-repeat="option in problem.options">
+                        <div class="row">
+                            <div class="col-xs-11">
+                                <div class="option" ng-click="videoComprehension.clickOption($index, $parent.$index)" ng-class="{'isClicked': option.isClicked, 'isCorrect': option.isCorrect}">
+                                    <div class="col-xs-10">
+                                        <div class="phoneticize">{{option.phoneticize}}</div>
+                                        <div class="question-title">{{option.title}}</div>
+                                    </div>
+                                    <iframe scrolling="no" width="36" height="36" src="http://www.ximalaya.com/swf/sound/red.swf?id=8140464" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-xs-1 no-padding">
+                                <img ng-show="option.isCorrect" src="/static/images/layout/demoL9-right-button.png">
+                                <img ng-show="option.isClicked && videoComprehension.isSubmitted && !option.isCorrect" src="/static/images/layout/demoL9-wrong-button.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="v-footer">
+                <ul class="list-inline">
+                    <li><button class="btn btn-lg" ng-disabled="!videoComprehension.isOptionClicked || videoComprehension.isSubmitted" ng-click="videoComprehension.clickSubmit()">Submit</button></li>
+                    <li><a class="btn btn-lg slick-arrow video-comprehension-next" ng-show="videoComprehension.isSubmitted && videoComprehension.problemIndex !== data.problems.length-1" ng-click="videoComprehension.clickNext()" href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<op-footer-button></op-footer-button>

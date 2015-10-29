@@ -12,6 +12,7 @@ import sketchVideoDirective = require("../../components/directives/base-pages/sk
 import sketchQuestionDirective = require("../../components/directives/base-pages/sketch-question/sketch-question-directive");
 import scorePageDirective = require("../../components/directives/base-pages/score-page/score-page-directive");
 import slickDirective = require("../../components/directives/slick/slick-directive");
+import videoComprehensionDirective = require("../../components/directives/base-pages/video-comprehension/video-comprehension-directive");
 
 'use strict';
 
@@ -27,5 +28,6 @@ angular.module(moduleName, [
     scorePageDirective.moduleName,
     sketchQuestionDirective.moduleName,
     sketchVideoDirective.moduleName,
-    slickDirective.moduleName])
+    slickDirective.moduleName,
+    videoComprehensionDirective.moduleName])
     .controller(baseController.controllerName, baseController.Controller);

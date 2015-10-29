@@ -14,13 +14,14 @@
             'bootstrap-css': 'vendor/bootstrap-css/bootstrap.min',
             jquery: 'vendor/jquery/jquery',
             json: 'vendor/requirejs-plugins/json',
+            ngSanitize: 'vendor/angular-sanitize/angular-sanitize',
+            ngPageslide: 'vendor/ng-pageslide/index', //https://github.com/dpiccone/ng-pageslide
             require_config: 'config/require_config',
             restmod: 'vendor/angular-restmod/angular-restmod-bundle.min',
             shared_require_config: 'config/shared_require_config',
             'slick-carousel': 'vendor/slick-carousel/slick.min',
             text: 'vendor/requirejs-text/text',
-            'ui.router': 'vendor/angular-ui-router/angular-ui-router',
-            'ng-pageslide': 'vendor/ng-pageslide/index' //https://github.com/dpiccone/ng-pageslide
+            'ui.router': 'vendor/angular-ui-router/angular-ui-router'
         },
         shim: {
             angular: {
@@ -33,6 +34,12 @@
             'bootstrap-css': {
                 deps: ['jquery']
             },
+            ngPageslide: {
+                deps: ['angular']
+            },
+            ngSanitize: {
+                deps: ['angular']
+            },
             restmod: {
                 deps: ['angular']
             },
@@ -40,9 +47,6 @@
                 deps: ['jquery']
             },
             'ui.router': {
-                deps: ['angular']
-            },
-            'ng-pageslide': {
                 deps: ['angular']
             }
         }

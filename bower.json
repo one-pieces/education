@@ -26,6 +26,7 @@
     "bootstrap-css": "~3.3.4",
     "angular-restmod": "~1.1.9",
     "slick-carousel": "~1.5.8",
-    "ng-pageslide": "https://raw.githubusercontent.com/dpiccone/ng-pageslide/master/dist/angular-pageslide-directive.min.js"
+    "ng-pageslide": "https://raw.githubusercontent.com/dpiccone/ng-pageslide/master/dist/angular-pageslide-directive.min.js",
+    "angular-sanitize": "~1.4.7"
   }
 }
