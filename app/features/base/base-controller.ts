@@ -3,7 +3,6 @@ import config = require('config');
 import models = require('../../components/models');
 import pageData = require('../../static/page-data');
 import drawLineData = require('../../static/draw-line-data');
-
 'use strict';
 
 export interface IScope extends ng.IScope {
@@ -22,7 +21,6 @@ export class BaseController {
     pageData = pageData;
     drawLineData = drawLineData;
     currentUser: models.user.IUser;
-
     constructor(private $scope: IScope,
                 private UserModel: models.user.IUserStatic) {
         $scope.base = this;

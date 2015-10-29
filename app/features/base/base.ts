@@ -12,7 +12,8 @@ import sketchQuestionDirective = require("../../components/directives/base-pages
 import sketchVideoDirective = require("../../components/directives/base-pages/sketch-video/sketch-video-directive");
 import models = require('../../components/models');
 import slickDirective = require("../../components/directives/slick/slick-directive");
-
+import mouseCaptureDirective = require("../../components/directives/mouse-capture/mouse-capture-directive");
+import flowChartDirective = require("../../components/directives/flowchart/flowchart-directive");
 'use strict';
 
 export var moduleName = config.appName + '.base';
@@ -26,5 +27,7 @@ angular.module(moduleName, [
     models.moduleName,
     sketchQuestionDirective.moduleName,
     sketchVideoDirective.moduleName,
-    slickDirective.moduleName])
+    slickDirective.moduleName,
+    mouseCaptureDirective.moduleName,
+    flowChartDirective.moduleName])
     .controller(baseController.controllerName, baseController.Controller);

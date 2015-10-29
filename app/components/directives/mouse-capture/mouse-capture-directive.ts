@@ -2,7 +2,7 @@
 
 import angular = require('angular');
 import config = require('config');
-import mouseCaptureService = require('components/services/mouse-capture-service');
+import mouseCaptureService = require('../../../components/services/mouse-capture-service');
 
 'use strict';
 

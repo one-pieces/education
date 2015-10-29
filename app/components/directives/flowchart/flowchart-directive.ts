@@ -1,8 +1,8 @@
 /// <reference path='../../../app.d.ts' />
-
+/// <amd-dependency path='text!components/directives/flowchart/flowchart_template.html' />
 import angular = require('angular');
 import config = require('config');
-import draggingService = require('components/services/dragging-service');
+import flowChartController = require('../../../components/directives/flowchart/flowchart-controller');
 
 'use strict';
 
@@ -10,59 +10,11 @@ export var moduleName = config.appName + '.components.directive.flowchart';
 export var directiveName = 'flowChart';
 export var templateText = window.require('text!components/directives/flowchart/flowchart_template.html');
 export interface IScope extends ng.IScope {
-    flowChart: FlowChart;
+    chart: any;
     someAttribute: string;
 }
 
-/**
- * GoalPage class for the directive
- */
-export class FlowChart {
-    static $inject = [ 'scope', 'element', 'attrs',  draggingService.serviceName];
-    constructor(private $scope: IScope,
-                private element: JQuery,
-                private attrs: ng.IAttributes,
-                private draggingService: draggingService.Service,
-                private document: any,
-                private jQuery: any
-    ){
-        var controller = this;
 
-        //
-        // Reference to the document and jQuery, can be overridden for testting.
-        //
-        this.document = document;
-
-        //
-        // Wrap jQuery so it can easily be  mocked for testing.
-        //
-        this.jQuery = function (element) {
-            return $(element);
-        };
-
-        //
-        // Init data-model variables.
-        //
-        $scope.draggingConnection = false;
-        $scope.connectorSize = 10;
-        $scope.dragSelecting = false;
-
-
-        //
-        // Reference to the connection, connector or node that the mouse is currently over.
-        //
-        $scope.mouseOverConnector = null;
-        $scope.mouseOverConnection = null;
-        $scope.mouseOverNode = null;
-
-        //
-        // The class for connections and connectors.
-        //
-        this.connectionClass = 'connection';
-        this.connectorClass = 'connector';
-        this.nodeClass = 'node';
-    }
-}
 
 /**
  * GoalPage-Directive
@@ -78,22 +30,20 @@ export class FlowChart {
  *
  * ```
  */
-export class MouseCaptureDirective implements ng.IDirective {
-    static $inject = [ '$injector'];
+export class FlowChartDirective implements ng.IDirective {
     template = templateText;
-    constructor(private $injector: ng.auto.IInjectorService) {}
+    replace = true;
     restrict = 'E';
     scope = {
-        chart: "=chart"
-    };
-
+        chart: '=chart'
+    }
+    controller = flowChartController.Controller;
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
-        scope.mouseCapture = <MouseCapture>
-            this.$injector.instantiate(MouseCapture, { scope: scope, element: element, attrs: attrs });
     }
 }
 
-angular.module(moduleName, [mouseCaptureService.moduleName])
+angular.module(moduleName, [])
+    .controller(flowChartController.controllerName, flowChartController.Controller)
     .directive(directiveName, ['$injector', ($injector: ng.auto.IInjectorService) => {
-        return $injector.instantiate(MouseCaptureDirective);
+        return $injector.instantiate(FlowChartDirective);
     }]);

@@ -49,17 +49,7 @@
             },
             'ng-pageslide': {
                 deps: ['angular']
-            },
-            'mouse-capture-service': {
-                deps: ['angular']
-            },
-            'dragging-service': {
-                deps: ['angular']
-            },
-
-            'flow-chart': {
-                deps: ['angular']
-            },
+            }
         }
     });
 })();

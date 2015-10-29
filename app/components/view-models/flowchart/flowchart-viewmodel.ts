@@ -7,7 +7,7 @@ class ConnectorViewModel {
         this.data = connectorDataModel;
         this.name = function () {
             return this.data.name;
-        }
+        };
 
         //
         // X coordinate of the connector.
@@ -30,7 +30,7 @@ class ConnectorViewModel {
             return parentNode;
         };
     }
-};
+}
 
 class NodeViewModel{
     data: any;
@@ -166,7 +166,7 @@ class NodeViewModel{
         }
         this._addConnector(connectorDataModel, this.data.width, this.data.outputConnectors, this.outputConnectors);
     };
-}};
+}}
 
 class ConnectionViewModel {
     data: any;
@@ -476,11 +476,11 @@ var flowchart = {
 
             if (startConnectorType == endConnectorType) {
                 throw new Error("Failed to create connection. Only output to input connections are allowed.")
-            };
+            }
 
             if (startNode == endNode) {
                 throw new Error("Failed to create connection. Cannot link a node with itself.")
-            };
+            }
             var tmpConnectionsDataModel: any = [];
             var tmpConnectionsViewModel: any = [];
             for (var cnt = 0; cnt < connectionsDataModel.length; cnt++) {
