@@ -1,6 +1,7 @@
 /// <reference path='../../app.d.ts' />
 
 import config = require('config');
+import listeningComprehensionData = require('../../static/data/listening-comprehension-data');
 import models = require('../../components/models');
 import pageData = require('../../static/data/page-data');
 import sketchQuestionData = require('../../static/data/sketch-question-data');
@@ -27,6 +28,9 @@ export class BaseController {
     videoComprehensionScore = 0;
     videoComprehensionTotleScore = 0;
     videoComprehensionData = videoComprehensionData;
+    listeningComprehensionScore = 0;
+    listeningComprehensionTotleScore = 0;
+    listeningComprehensionData = videoComprehensionData;
     pageData = pageData;
     currentUser: models.user.IUser;
 

@@ -14,6 +14,7 @@ export interface IScope extends ng.IScope {
     choice: Choice;
     data: any;
     id: string;
+    type: string;
 }
 
 /**
@@ -55,7 +56,7 @@ export class Choice {
         } else {
             this.result = false;
         }
-        this.scope.$emit('video-comprehension',
+        this.scope.$emit(this.scope.type,
             { id: this.scope.id, problemIndex: this.problemIndex, result: this.result });
     }
     clickNext() {
@@ -88,7 +89,8 @@ export class ChoiceDirective implements ng.IDirective {
     // transclude = true;
     scope = {
         data: '=',
-        id: '='
+        id: '=',
+        type: '@'
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {

@@ -14,7 +14,7 @@
                         <div class="slide">
                             <op-goal-page></op-goal-page>
                         </div>
-                        <div class="slide">
+                        <!-- <div class="slide">
                             <op-sketch-video></op-sketch-video>
                         </div>
                         <div class="slide" ng-repeat="sketchQuestion in base.sketchQuestionData">
@@ -22,12 +22,15 @@
                         </div>
                         <div class="slide">
                             <op-score-page label="Score" score="{{base.sketchQuestionScore}}/{{base.sketchQuestionTotleScore}}"></op-score-page>
-                        </div>
+                        </div> -->
                         <div class="slide" ng-repeat="videoComprehension in base.videoComprehensionData">
                             <op-video-comprehension data="videoComprehension"></op-video-comprehension>
                         </div>
                         <div class="slide">
                             <op-score-page label="Score for brief comprehension" score="{{base.videoComprehensionScore}}/{{base.videoComprehensionTotleScore}}"></op-score-page>
+                        </div>
+                        <div class="slide" ng-repeat="listeningComprehension in base.listeningComprehensionData">
+                            <op-listening-comprehension data="listeningComprehension"></op-listening-comprehension>
                         </div>
                     </div>
                 </div>

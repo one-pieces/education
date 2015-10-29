@@ -7,6 +7,7 @@ import config = require('config');
 import baseController = require("./base-controller");
 import footerButtonDirective = require('../../components/directives/footer-button/footer-button-directive');
 import goalPageDirective = require("../../components/directives/base-pages/goal-page/goal-page-directive");
+import listeningComprehensionDirective = require("../../components/directives/base-pages/listening-comprehension/listening-comprehension-directive");
 import models = require('../../components/models');
 import sketchVideoDirective = require("../../components/directives/base-pages/sketch-video/sketch-video-directive");
 import sketchQuestionDirective = require("../../components/directives/base-pages/sketch-question/sketch-question-directive");
@@ -24,6 +25,7 @@ angular.module(moduleName, [
     'pageslide-directive',
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
+    listeningComprehensionDirective.moduleName,
     models.moduleName,
     scorePageDirective.moduleName,
     sketchQuestionDirective.moduleName,
