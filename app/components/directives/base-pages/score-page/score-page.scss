@@ -3,11 +3,22 @@
     color: #2EA9DF;
     text-align: center;
     font-weight: bold;
-    .label-box {
-        font-size: 20px;
+    .item-score {
+        .label-box {
+            font-size: 20px;
+        }
+        .score {
+            margin-left: 20px;
+            font-size: 25px;
+        }
     }
-    .score {
-        margin-left: 20px;
-        font-size: 65px;
+    .part-score {
+        .label-box {
+            font-size: 25px;
+        }
+        .score {
+            margin-left: 20px;
+            font-size: 65px;
+        }
     }
 }

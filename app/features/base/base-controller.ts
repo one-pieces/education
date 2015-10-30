@@ -22,15 +22,12 @@ export class BaseController {
     static $inject = [ '$scope',
                        models.user.serviceName ];
 
-    sketchQuestionScore = 0;
-    sketchQuestionTotleScore = 0;
     sketchQuestionData = sketchQuestionData;
-    videoComprehensionScore = 0;
-    videoComprehensionTotleScore = 0;
+    sketchQuestionScoreData: any;
     videoComprehensionData = videoComprehensionData;
-    listeningComprehensionScore = 0;
-    listeningComprehensionTotleScore = 0;
-    listeningComprehensionData = videoComprehensionData;
+    videoComprehensionScoreData: any;
+    listeningComprehensionData = listeningComprehensionData;
+    listeningComprehensionScoreData: any;
     pageData = pageData;
     currentUser: models.user.IUser;
 
@@ -43,34 +40,91 @@ export class BaseController {
             console.log('return user success, user info: ' + user.givenName);
         });
 
+        this.sketchQuestionScoreData = {
+            partScore: {
+                label: 'Score',
+                result: {
+                    score: '0',
+                    totleScore: '0'
+                }
+            }
+        }
+
+        this.videoComprehensionScoreData = {
+            partScore: {
+                label: 'Score for brief comprehension',
+                result: {
+                    score: '0',
+                    totleScore: '0'
+                }
+            }
+        }
+
+        this.listeningComprehensionScoreData = {
+            partScore: {
+                label: 'Score for listening comprehension',
+                result: {
+                    score: '0',
+                    totleScore: '0'
+                }
+            }
+        }
+
         this.sketchQuestionScoreCounter();
         this.videoComprehensionScoreCounter();
+        this.listeningComprehensionScoreCounter();
     }
     sketchQuestionScoreCounter() {
+        var sketchQuestionTotleScore = 0;
+        var sketchQuestionScore = 0;
         this.sketchQuestionData.forEach(sketchQuestion => {
-            this.sketchQuestionTotleScore += sketchQuestion.score;
+            sketchQuestionTotleScore += sketchQuestion.score;
         });
+        this.sketchQuestionScoreData.partScore.result.totleScore = sketchQuestionTotleScore.toString();
 
         this.$scope.$on('sketch-question', (event: any, message: any) => {
             if (message.result) {
-                this.sketchQuestionScore += this.sketchQuestionData[message.id].score;
+                sketchQuestionScore += this.sketchQuestionData[message.id].score;
+                this.sketchQuestionScoreData.partScore.result.score = sketchQuestionScore.toString();
             }
         });  
     }
     videoComprehensionScoreCounter() {
+        var videoComprehensionTotleScore = 0;
+        var videoComprehensionScore = 0;
         this.videoComprehensionData.forEach(videoComprehension => {
             videoComprehension.problems.forEach(problem => {
-                this.videoComprehensionTotleScore += problem.score;
+                videoComprehensionTotleScore += problem.score;
             });
         });
+        this.videoComprehensionScoreData.partScore.result.totleScore = videoComprehensionTotleScore.toString();
 
         this.$scope.$on('video-comprehension', (event: any, message: any) => {
             if (message.result) {
-                this.videoComprehensionScore += 
+                videoComprehensionScore += 
                     this.videoComprehensionData[message.id].problems[message.problemIndex].score;
+                this.videoComprehensionScoreData.partScore.result.score = videoComprehensionScore.toString();
+            }
+        });  
+    }
+    listeningComprehensionScoreCounter() {
+        var listeningComprehensionTotleScore = 0;
+        var listeningComprehensionScore = 0;
+        this.listeningComprehensionData.forEach(listeningComprehension => {
+            listeningComprehension.problems.forEach( problem => {
+                listeningComprehensionTotleScore += problem.score;
+            });
+        });
+        this.listeningComprehensionScoreData.partScore.result.totleScore = listeningComprehensionTotleScore.toString();
+
+        this.$scope.$on('listening-comprehension', (event: any, message: any) => {
+            if (message.result) {
+                listeningComprehensionScore +=
+                    this.listeningComprehensionData[message.id].problems[message.problemIndex].score;
+                this.listeningComprehensionScoreData.partScore.result.score = listeningComprehensionScore.toString();
             }
         });  
     }
 }
 
-export class Controller extends BaseController {}
+export class Controller extends BaseController  {}

@@ -2,7 +2,7 @@
     <div class="title">
         Select the correct answer. Before making the selection, you may listen to the question and options by clicking on the audio button.
     </div>
-    <div op-slick infinite="false" init-onload="true" data="data" prev-arrow=".base .choice-prev" next-arrow=".base .choice-next" fade="true">
+    <div op-slick infinite="false" init-onload="true" data="data" prev-arrow=".base .{{type}}-prev" next-arrow=".base .{{type}}-next" fade="true">
         <div class="question" ng-repeat="problem in data">
             <div class="phoneticize">{{problem.question.phoneticize}}</div>
             <div class="question-title">{{problem.question.title}}</div>
@@ -28,7 +28,7 @@
     <div class="v-footer">
         <ul class="list-inline">
             <li><button class="btn btn-lg" ng-disabled="!choice.isOptionClicked || choice.isSubmitted" ng-click="choice.clickSubmit()">Submit</button></li>
-            <li><a class="btn btn-lg slick-arrow choice-next" ng-show="choice.isSubmitted && choice.problemIndex !== data.length-1" ng-click="choice.clickNext()" href="#">Next</a></li>
+            <li><a class="btn btn-lg slick-arrow {{type}}-next" ng-show="choice.isSubmitted && choice.problemIndex !== data.length-1" ng-click="choice.clickNext()" href="#">Next</a></li>
         </ul>
     </div>
 </div>

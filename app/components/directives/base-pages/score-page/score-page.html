@@ -1,8 +1,12 @@
 <div class="score-page container">
-    <div class="row">
+    <div class="row item-score" ng-repeat="item in itemScores">
         <!-- <h1>Score: {{score}}</h1> -->
-        <span class="label-box">{{label}}:</span>
-        <span class="score">  {{score}}</span>
+        <span class="label-box">{{item.label}}:</span>
+        <span class="score">  {{item.result.score}}/{{item.result.totleScore}}</span>
+    </div>
+    <div class="row part-score">
+        <span class="label-box">{{partScore.label}}:</span>
+        <span class="score"> {{partScore.result.score}}/{{partScore.result.totleScore}}</span>
     </div>
 </div>
 <op-footer-button></op-footer-button>
