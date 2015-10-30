@@ -1,0 +1,29 @@
+<div class="imitate-text">
+    <div class="jumbotron container">
+        <h3 class="title">Text</h3>
+        <div class="description">
+            Listen to the text and try to imitate the pronouncation. Don't worry if you are not able to get the meaning of the text well.
+        </div>
+        <div class="jumbotron">
+            <div class="row" ng-repeat="row in data.rows">
+                <div class="col-md-6" ng-repeat="col in row.cols">
+                    <div class="col-xs-10">
+                        <div class="phoneticize">{{col.phoneticize}}</div>
+                        <div class="snetence">{{col.snetence}}</div>
+                    </div>
+                    <iframe scrolling="no" width="36" height="36" src="http://www.ximalaya.com/swf/sound/red.swf?id=8140464" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <h3 class="title">Goal</h3>
+        <div class="jumbotron small">
+            <span>
+                Goals : Imitation of<br/>
+                <br/>
+                zài … … li / shɑnɡ<br/>
+                在  … … 里 / 上<br/>
+            </span>
+        </div>
+    </div>
+</div>
+<op-footer-button></op-footer-button>

@@ -1,6 +1,6 @@
-.goal-page {   
+.imitate-text {
     .jumbotron {
-        background-color: #E2E9E7;
+        // background-color: rgb(227, 227, 227);
         padding: 0 50px;
 
         &.container {
@@ -8,18 +8,32 @@
             margin-top: 80px;
         }
         .title {
-            color: #5e5e5e;
-            margin: 20px;
+            color: rgb(158, 158, 158);
+            margin: 10px;
             font-size: 20px;
             text-align: center;
+        }
+        .description {
+            color: rgb(135, 135, 135);
+            margin-bottom: 5px;
         }
         .jumbotron {
             background-color: #FFFFFF;
             padding: 20px;
             margin-bottom: 0;
             color: #050505;
-            font-size: 18px;
-            min-height: 350px;
+            font-size: 15px;
+            // min-height: 350px;
+            &.small {
+                margin-bottom: 20px;
+                padding: 10px 20px;
+            }
+            .phoneticize {
+                font-size: 12px;
+            }
+            .snetence{
+                margin-bottom: 10px;
+            }
         }
         .start {
             .btn {

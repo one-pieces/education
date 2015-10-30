@@ -1,6 +1,7 @@
 /// <reference path='../../app.d.ts' />
 
 import config = require('config');
+import imitateTextData = require('../../static/data/imitate-text-data');
 import listeningComprehensionData = require('../../static/data/listening-comprehension-data');
 import models = require('../../components/models');
 import pageData = require('../../static/data/page-data');
@@ -22,6 +23,7 @@ export class BaseController {
     static $inject = [ '$scope',
                        models.user.serviceName ];
 
+    imitateTextData = imitateTextData;
     sketchQuestionData = sketchQuestionData;
     sketchQuestionScoreData: any;
     videoComprehensionData = videoComprehensionData;
