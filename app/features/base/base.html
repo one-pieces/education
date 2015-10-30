@@ -12,9 +12,24 @@
                 <div class="col-sm-12">
                     <div op-slick infinite="false" init-onload="true" data="base.sketchQuestionData" prev-arrow=".base .prev" next-arrow=".base .next" fade="true">
                         <div class="slide">
-                            <op-goal-page></op-goal-page>
+                            <op-goal-page button-label="START">
+                                <span>
+                                    In this lesson we're going to have you master the following target langauge:<br/>
+                                    &nbsp;&nbsp;&nbsp;zài … … li / shɑnɡ<br/>
+                                    &nbsp;&nbsp;&nbsp;在  … … 里 / 上<br/>
+                                    &nbsp;&nbsp;&nbsp;wèi shén me ？ yīn wèi … …<br/>
+                                    &nbsp;&nbsp;&nbsp;为  什   么 ？ 因  为  … …<br/>
+                                    &nbsp;&nbsp;&nbsp;S+ yào +vp.<br/>
+                                    &nbsp;&nbsp;&nbsp;S+ 要  +vp.<br/>
+                                    <br/>
+                                    By the end of the lesson you will have:<br/>
+                                    1)&nbsp;&nbsp;&nbsp;&nbsp;Guessed the meaning from the context.<br/>
+                                    2)&nbsp;&nbsp;&nbsp;&nbsp;Correctly pronounced the langauge.<br/>
+                                    3)&nbsp;&nbsp;&nbsp;&nbsp;Used the language in real life situations.<br/>
+                                </span>
+                            </op-goal-page>
                         </div>
-                        <!-- <div class="slide">
+                        <div class="slide">
                             <op-sketch-video></op-sketch-video>
                         </div>
                         <div class="slide" ng-repeat="sketchQuestion in base.sketchQuestionData">
@@ -22,7 +37,7 @@
                         </div>
                         <div class="slide">
                             <op-score-page part-score="base.sketchQuestionScoreData.partScore"></op-score-page>
-                        </div> -->
+                        </div>
                         <div class="slide" ng-repeat="videoComprehension in base.videoComprehensionData">
                             <op-video-comprehension data="videoComprehension"></op-video-comprehension>
                         </div>
@@ -34,6 +49,29 @@
                         </div>
                         <div class="slide">
                             <op-score-page part-score="base.listeningComprehensionScoreData.partScore"></op-score-page>
+                        </div>
+                        <div class="slide">
+                            <op-goal-page button-label="NEXT">
+                                <span>
+                                    The goal in this section is for the student to begin to distinguish and pronounce correctly the target language.  This is difficult in Chinese so this section is long and consists of three parts.<br/>
+                                    <br/>
+                                    Part 1.  Computer speaks the whole sentence first.  Student imitates.<br/>
+                                    Part 2.  Computer speaks a sentence but the text on screen has one word missing.  Student completes based on what he has heard.<br/>
+                                    Part 3.  Some general comprehension activities.<br/>
+                                    <br/>
+                                    <span class="important">Important</span>: in this section the computer always speaks first.  Any excercise the student does should be after the computer has read the words, or read the correct sentence.
+                                </span>
+                            </op-goal-page>
+                        </div>
+                        <div class="slide">
+                            <op-goal-page button-label="START">
+                                <span>
+                                    Goals : Imitation of<br/>
+                                    <br/>
+                                    zài … … li / shɑnɡ<br/>
+                                    在  … … 里 / 上<br/>
+                                </span>
+                            </op-goal-page>
                         </div>
                     </div>
                 </div>

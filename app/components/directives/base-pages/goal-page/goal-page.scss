@@ -16,10 +16,9 @@
         background-color: #FFFFFF;
         padding: 20px;
         margin-bottom: 0;
-        span {
-            color: #050505;
-            font-size: 18px;
-        }
+        color: #050505;
+        font-size: 18px;
+        min-height: 350px;
     }
     .start {
         .btn {
@@ -27,5 +26,8 @@
         }
         text-align: center;
         margin: 30px;
+    }
+    .important {
+        color: red;
     }
 }

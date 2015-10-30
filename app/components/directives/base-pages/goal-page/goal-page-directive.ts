@@ -12,7 +12,7 @@ export var templateText = window.require('text!components/directives/base-pages/
 
 export interface IScope extends ng.IScope {
     goalPage: GoalPage;
-    someAttribute: string;
+    buttonLabel: string;
 }
 
 /**
@@ -20,11 +20,8 @@ export interface IScope extends ng.IScope {
  */
 export class GoalPage {
     static $inject = ['scope'];
-    
-    someValue: string;
 
     constructor(private scope: IScope) {
-        this.someValue = 'goal-page-directive';
     }
 }
 
@@ -49,9 +46,9 @@ export class GoalPageDirective implements ng.IDirective {
 
     restrict = 'E';
     template = templateText;
-    // transclude = true;
+    transclude = true;
     scope = {
-        someAttribute: '@?'
+        buttonLabel: '@'
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
