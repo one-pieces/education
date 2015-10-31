@@ -1,7 +1,6 @@
 /// <reference path='../../node_modules/node-shared-typescript-defs/requirejs/require.d.ts' />
-
 // http://www.tuicool.com/articles/jam2Anv
-(() => {
+(function () {
     requirejs.config({
         map: {
             '*': {
@@ -15,14 +14,14 @@
             jquery: 'vendor/jquery/jquery',
             json: 'vendor/requirejs-plugins/json',
             ngSanitize: 'vendor/angular-sanitize/angular-sanitize',
-            ngPageslide: 'vendor/ng-pageslide/index', //https://github.com/dpiccone/ng-pageslide
+            ngPageslide: 'vendor/ng-pageslide/index',
             require_config: 'config/require_config',
             restmod: 'vendor/angular-restmod/angular-restmod-bundle.min',
             shared_require_config: 'config/shared_require_config',
             'slick-carousel': 'vendor/slick-carousel/slick.min',
             text: 'vendor/requirejs-text/text',
             'ui.router': 'vendor/angular-ui-router/angular-ui-router',
-            ngDD : 'vendor/angular-drag-and-drop/build/js/angular-drag-and-drop'
+            ngDD: 'vendor/angular-drag-and-drop/build/js/angular-drag-and-drop'
         },
         shim: {
             angular: {
@@ -50,10 +49,10 @@
             'ui.router': {
                 deps: ['angular']
             },
-            ngDD : {
+            ngDD: {
                 deps: ['angular']
             }
-
         }
     });
 })();
+//# sourceMappingURL=shared_require_config.js.map

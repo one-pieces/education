@@ -14,7 +14,7 @@ import sketchQuestionDirective = require("../../components/directives/base-pages
 import scorePageDirective = require("../../components/directives/base-pages/score-page/score-page-directive");
 import slickDirective = require("../../components/directives/slick/slick-directive");
 import videoComprehensionDirective = require("../../components/directives/base-pages/video-comprehension/video-comprehension-directive");
-
+import sortPageDirective = require("../../components/directives/base-pages/sort-page/sort-page-directive");
 'use strict';
 
 export var moduleName = config.appName + '.base';
@@ -22,7 +22,7 @@ export var template = window.require('text!features/base/base.html');
 export var controllerName = baseController.controllerName;
 
 angular.module(moduleName, [
-    'pageslide-directive',
+
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
     listeningComprehensionDirective.moduleName,
