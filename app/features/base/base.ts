@@ -7,6 +7,7 @@ import config = require('config');
 import baseController = require("./base-controller");
 import footerButtonDirective = require('../../components/directives/footer-button/footer-button-directive');
 import goalPageDirective = require("../../components/directives/base-pages/goal-page/goal-page-directive");
+import imitateChoiceDirective = require("../../components/directives/base-pages/imitate-choice/imitate-choice-directive");
 import imitateTextDirective = require("../../components/directives/base-pages/imitate-text/imitate-text-directive");
 import listeningComprehensionDirective = require("../../components/directives/base-pages/listening-comprehension/listening-comprehension-directive");
 import models = require('../../components/models');
@@ -26,6 +27,7 @@ angular.module(moduleName, [
     'pageslide-directive',
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
+    imitateChoiceDirective.moduleName,
     imitateTextDirective.moduleName,
     listeningComprehensionDirective.moduleName,
     models.moduleName,

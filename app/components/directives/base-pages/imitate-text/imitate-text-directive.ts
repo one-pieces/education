@@ -1,4 +1,4 @@
-/// <re f eren c e path='../../../../app.d.ts' />
+/// <reference path='../../../../app.d.ts' />
 /// <amd-dependency path='css!./imitate-text.css' />
 /// <amd-dependency path='text!components/directives/base-pages/imitate-text/imitate-text.html' />
 import angular = require('angular');
@@ -19,10 +19,17 @@ export interface IScope extends ng.IScope {
  * ImitateText class for the directive
  */
 export class ImitateText {
-    static $inject = ['scope'];
+    static $inject = ['scope', '$sce'];
 
-    constructor(private scope: IScope) {
-        console.log(scope.data);
+    goalHtml: string;
+
+    constructor(private scope: IScope, private $sce: ng.ISCEService) {
+        this.goalHtml = this.$sce.trustAsHtml(scope.data.goal);
+        scope.data.rows.forEach((row: any) => {
+            row.cols.forEach((col: any) => {
+                col.audioUrl = this.$sce.trustAsResourceUrl(col.audioUrl);
+            });
+        });
     }
 }
 

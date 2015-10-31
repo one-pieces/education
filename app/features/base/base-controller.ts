@@ -1,6 +1,7 @@
 /// <reference path='../../app.d.ts' />
 
 import config = require('config');
+import imitateChoiceData = require('../../static/data/imitate-choice-data');
 import imitateTextData = require('../../static/data/imitate-text-data');
 import listeningComprehensionData = require('../../static/data/listening-comprehension-data');
 import models = require('../../components/models');
@@ -20,9 +21,11 @@ export var controllerName = config.appName + '.base.controller';
  * Controller for the base page
  */
 export class BaseController {
-    static $inject = [ '$scope',
-                       models.user.serviceName ];
+    static $inject = [  '$scope',
+                        models.user.serviceName ];
 
+    imitateChoiceData = imitateChoiceData;
+    imitateChoiceScoreData: any;
     imitateTextData = imitateTextData;
     sketchQuestionData = sketchQuestionData;
     sketchQuestionScoreData: any;
@@ -72,9 +75,20 @@ export class BaseController {
             }
         }
 
+        this.imitateChoiceScoreData = {
+            partScore: {
+                label: 'Score for multiple choice',
+                result: {
+                    score: '0',
+                    totleScore: '0'
+                }
+            }
+        }
+
         this.sketchQuestionScoreCounter();
         this.videoComprehensionScoreCounter();
         this.listeningComprehensionScoreCounter();
+        this.imitateChoiceScoreCounter();
     }
     sketchQuestionScoreCounter() {
         var sketchQuestionTotleScore = 0;
@@ -124,6 +138,24 @@ export class BaseController {
                 listeningComprehensionScore +=
                     this.listeningComprehensionData[message.id].problems[message.problemIndex].score;
                 this.listeningComprehensionScoreData.partScore.result.score = listeningComprehensionScore.toString();
+            }
+        });  
+    }
+    imitateChoiceScoreCounter() {
+        var imitateChoiceTotleScore = 0;
+        var imitateChoiceScore = 0;
+        this.imitateChoiceData.forEach(imitateChoice => {
+            imitateChoice.problems.forEach( problem => {
+                imitateChoiceTotleScore += problem.score;
+            });
+        });
+        this.imitateChoiceScoreData.partScore.result.totleScore = imitateChoiceTotleScore.toString();
+
+        this.$scope.$on('imitate-choice', (event: any, message: any) => {
+            if (message.result) {
+                imitateChoiceScore +=
+                    this.imitateChoiceData[message.id].problems[message.problemIndex].score;
+                this.imitateChoiceScoreData.partScore.result.score = imitateChoiceScore.toString();
             }
         });  
     }

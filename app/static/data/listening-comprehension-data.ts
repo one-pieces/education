@@ -3,7 +3,7 @@
 export = [
     {
         id: '0',
-        audioUrl: '',
+        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading',
         problems: [
             {
                 id: '0',
@@ -14,13 +14,16 @@ export = [
                 options: [
                     {
                         phoneticize: 'fánɡ jiān ',
-                        title: 'A.  房    间'
-                    },{
+                        title: 'A.  房    间',
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'xǐshǒu jiān',
-                        title: 'B.  洗 手    间'
-                    },{
+                        title: 'B.  洗 手    间',
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'zhuō zi',
-                        title: 'C.  桌   子'
+                        title: 'C.  桌   子',
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
                     }
                 ],
                 answer: 1,
@@ -35,20 +38,20 @@ export = [
                     {
                         phoneticize: 'bāo',
                         title: 'A.  包',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'bāo li',
                         title: 'B.  包  里',
-                         audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'zhèr',
                         title: 'C.  这儿',
-                        audio: ''
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
                     }
                 ],
                 answer: 2,
                 score: 1
-            },{
+            }, {
                 id: '2',
                 question: {
                     phoneticize: 'BEN: Wǒ de iPad zài nǐ de zhuō zi_______， qǐnɡ nǐ ɡěi wǒ.',
@@ -58,20 +61,20 @@ export = [
                     {
                         phoneticize: 'li',
                         title: 'A. 里',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'shɑnɡ',
                         title: 'B.  上 ',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'wài',
                         title: 'C.  外',
-                        audio: ''
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
                     }
                 ],
                 answer: 1,
                 score: 1
-            },{
+            }, {
                 id: '3',
                 question: {
                     phoneticize: 'Miguel:  Ben ， nǐ_______  bù shēnɡ qì ？',
@@ -81,20 +84,20 @@ export = [
                     {
                         phoneticize: 'shén me',
                         title: 'A.  什  么',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'wèi shén me',
                         title: 'B.  为   什   么',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'yīn wèi ',
                         title: 'C.  因  为',
-                        audio: ''
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
                     }
                 ],
                 answer: 1,
                 score: 1
-            },{
+            }, {
                 id: '4',
                 question: {
                     phoneticize: 'jīn shuài ： Ben， nǐ tài  _____ le ！',
@@ -104,20 +107,20 @@ export = [
                     {
                         phoneticize: 'màn',
                         title: 'A.  慢',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'kuài',
                         title: 'B.  快',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'hǎo',
                         title: 'C.  好',
-                        audio: ''
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
                     }
                 ],
                 answer: 0,
                 score: 1
-            },{
+            }, {
                 id: '5',
                 question: {
                     phoneticize: 'Miguel ： Nǐ_____ qù nǎr？',
@@ -127,15 +130,15 @@ export = [
                     {
                         phoneticize: 'xiǎnɡ',
                         title: 'A.   想',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'yào',
                         title: 'B.   要',
-                        audio: ''
-                    },{
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
+                    }, {
                         phoneticize: 'zài',
                         title: 'C.   在',
-                        audio: ''
+                        audioUrl: 'https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=deprivation&spd=2&source=alading'
                     }
                 ],
                 answer: 1,

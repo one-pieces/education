@@ -63,7 +63,7 @@
                                 </span>
                             </op-goal-page>
                         </div>
-                        <div class="slide">
+                        <!-- <div class="slide">
                             <op-goal-page button-label="START">
                                 <span>
                                     Goals : Imitation of<br/>
@@ -72,9 +72,15 @@
                                     在  … … 里 / 上<br/>
                                 </span>
                             </op-goal-page>
-                        </div>
+                        </div> -->
                         <div class="slide" ng-repeat="imitateText in base.imitateTextData">
                             <op-imitate-text data="imitateText"></op-imitate-text>
+                        </div>
+                        <div class="slide" ng-repeat="imitateChoice in base.imitateChoiceData">
+                            <op-imitate-choice data="imitateChoice"></op-imitate-choice>
+                        </div>
+                        <div class="slide">
+                            <op-score-page part-score="base.imitateChoiceScoreData.partScore"></op-score-page>
                         </div>
                     </div>
                 </div>

@@ -14,7 +14,9 @@
                                 <div class="phoneticize">{{option.phoneticize}}</div>
                                 <div class="question-title">{{option.title}}</div>
                             </div>
-                            <iframe scrolling="no" width="36" height="36" src="http://www.ximalaya.com/swf/sound/red.swf?id=8140464" frameborder="0" allowfullscreen></iframe>
+                            <audio src="{{option.audioUrl}}" controls="controls">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                     </div>
                     <div class="col-xs-1 no-padding">

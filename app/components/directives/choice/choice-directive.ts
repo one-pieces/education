@@ -14,6 +14,7 @@ export interface IScope extends ng.IScope {
     choice: Choice;
     data: any;
     id: string;
+    showTitle?: boolean;
     type: string;
 }
 
@@ -21,7 +22,7 @@ export interface IScope extends ng.IScope {
  * Choice class for the directive
  */
 export class Choice {
-    static $inject = ['scope'];
+    static $inject = ['scope', '$sce'];
 
     result = false;
     choice: number;
@@ -30,7 +31,12 @@ export class Choice {
     isOptionClicked = false;
     isSubmitted = false;
 
-    constructor(private scope: IScope) {
+    constructor(private scope: IScope, private $sce: ng.ISCEService) {
+        this.scope.data.forEach((problem: any) => {
+            problem.options.forEach((option: any) => {
+                option.audioUrl = this.$sce.trustAsResourceUrl(option.audioUrl);
+            });
+        });  
     }
 
     clickOption(index: number, parentIndex: number) {
@@ -90,6 +96,7 @@ export class ChoiceDirective implements ng.IDirective {
     scope = {
         data: '=',
         id: '=',
+        showTitle: '=?',
         type: '@'
     };
 

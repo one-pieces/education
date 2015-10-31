@@ -22,9 +22,9 @@ export interface IScope extends ng.IScope {
 export class ListeningComprehension {
     static $inject = ['scope', '$sce'];
 
-    // trustedVideoUrl: string;
+    trustedAudioUrl: string;
     constructor(private scope: IScope, private $sce: ng.ISCEService) {
-        // this.trustedVideoUrl = this.$sce.trustAsResourceUrl(scope.data.videoUrl);
+        this.trustedAudioUrl = this.$sce.trustAsResourceUrl(scope.data.audioUrl);
     }
 }
 

@@ -3,8 +3,14 @@
         margin-top: 50px;
         color: rgb(10, 144, 214);
     }
-    .title {
+    .page-title {
         margin: 20px 0;
         font-size: 25px;
+        float: left;
+        ~audio {
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 40px;
+        }
     }
 }

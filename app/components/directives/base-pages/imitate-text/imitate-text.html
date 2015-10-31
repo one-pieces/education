@@ -11,18 +11,15 @@
                         <div class="phoneticize">{{col.phoneticize}}</div>
                         <div class="snetence">{{col.snetence}}</div>
                     </div>
-                    <iframe scrolling="no" width="36" height="36" src="http://www.ximalaya.com/swf/sound/red.swf?id=8140464" frameborder="0" allowfullscreen></iframe>
+                    <audio src="{{col.audioUrl}}" controls="controls">
+                        Your browser does not support the audio element.
+                    </audio>
                 </div>
             </div>
         </div>
         <h3 class="title">Goal</h3>
         <div class="jumbotron small">
-            <span>
-                Goals : Imitation of<br/>
-                <br/>
-                zài … … li / shɑnɡ<br/>
-                在  … … 里 / 上<br/>
-            </span>
+            <div ng-bind-html="imitateText.goalHtml"></div>
         </div>
     </div>
 </div>
