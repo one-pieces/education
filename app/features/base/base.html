@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div op-slick infinite="false" init-onload="true" data="base.sketchQuestionData" prev-arrow=".base .prev" next-arrow=".base .next" fade="true">
-                      <!--  <div class="slide">
+                        <div class="slide">
                             <op-goal-page></op-goal-page>
                         </div>
                          <div class="slide">
@@ -24,9 +24,7 @@
                             <op-score-page label="Score" score="{{base.sketchQuestionScore}}/{{base.sketchQuestionTotleScore}}"></op-score-page>
                         </div>
                         <div class="slide" ng-repeat="videoComprehension in base.videoComprehensionData">
-                        </div> -->
-
-                        <op-video-comprehension data="videoComprehension"></op-video-comprehension>
+                            <op-video-comprehension data="videoComprehension"></op-video-comprehension>
                         </div>
                         <div class="slide">
                             <op-score-page label="Score for brief comprehension" score="{{base.videoComprehensionScore}}/{{base.videoComprehensionTotleScore}}"></op-score-page>
