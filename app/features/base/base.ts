@@ -22,7 +22,7 @@ export var template = window.require('text!features/base/base.html');
 export var controllerName = baseController.controllerName;
 
 angular.module(moduleName, [
-
+    
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
     listeningComprehensionDirective.moduleName,
@@ -31,5 +31,6 @@ angular.module(moduleName, [
     sketchQuestionDirective.moduleName,
     sketchVideoDirective.moduleName,
     slickDirective.moduleName,
+    sortPageDirective.moduleName,
     videoComprehensionDirective.moduleName])
     .controller(baseController.controllerName, baseController.Controller);
