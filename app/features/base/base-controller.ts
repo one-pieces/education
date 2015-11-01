@@ -6,6 +6,7 @@ import models = require('../../components/models');
 import pageData = require('../../static/data/page-data');
 import sketchQuestionData = require('../../static/data/sketch-question-data');
 import videoComprehensionData = require('../../static/data/video-comprehension-data');
+import sortQuestionData = require('../../static/data/sort-question-data');
 
 'use strict';
 
@@ -32,6 +33,7 @@ export class BaseController {
     listeningComprehensionTotleScore = 0;
     listeningComprehensionData = videoComprehensionData;
     pageData = pageData;
+    sortQuestionData = sortQuestionData;
     currentUser: models.user.IUser;
 
     constructor(private $scope: IScope,

@@ -22,7 +22,7 @@ export var template = window.require('text!features/base/base.html');
 export var controllerName = baseController.controllerName;
 
 angular.module(moduleName, [
-
+    'pageslide-directive',
     'laneolson.ui.dragdrop',
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,

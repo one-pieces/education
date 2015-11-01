@@ -1,5 +1,6 @@
 /// <reference path='../../../../app.d.ts' />
 /// <amd-dependency path='ngDD' />
+/// <amd-dependency path='css!./parent-page.css' />
 /// <amd-dependency path='css!./sort-page.css' />
 /// <amd-dependency path='text!components/directives/base-pages/sort-page/sort-page.html' />
 import angular = require('angular');
@@ -14,6 +15,7 @@ export var templateText = window.require('text!components/directives/base-pages/
 export interface IScope extends ng.IScope {
     sortPage: SortPage;
     someAttribute: string;
+    data: any;
 }
 
 /**
@@ -47,14 +49,13 @@ export class SortPageDirective implements ng.IDirective {
     static $inject = ['$injector'];
 
     constructor(private $injector: ng.auto.IInjectorService) {
-        alert("directive constructor");
     }
 
     restrict = 'E';
     template = templateText;
     // transclude = true;
     scope = {
-        someAttribute: '@?'
+        data: "="
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {

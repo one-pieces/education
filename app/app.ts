@@ -29,6 +29,6 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
 
 export function init() {   
     $(document).ready(() => {
-        angular.bootstrap(document.documentElement, [moduleName], {strictDi: true});
+        angular.bootstrap(document.documentElement, [moduleName], {strictDi: false});
     });
 }

@@ -1,26 +1,26 @@
-<div>
-    <drag-and-drop>
-
-        <drag-item class="drag-item" drag-id="item-one">
-            <p>Item One</p>
-        </drag-item>
-
-        <drag-item class="drag-item" drag-id="item-two" drop-to="top right">
-            <p>Item Two</p>
-        </drag-item>
-
-        <drag-item class="drag-item" drag-id="item-three" drop-to="bottom left">
-            <p>Item Three</p>
-        </drag-item>
-
-        <drag-item class="drag-item" drag-id="item-four" drop-to="bottom right">
-            <p>Item Four</p>
-        </drag-item>
-
-        <drop-spot max-items="3" class="drop-spot" drop-id="drop-one">
-            <p>Drop Here</p>
-        </drop-spot>
-
+<div class=".drag-container">
+    <drag-and-drop >
+        <div class="row">
+            <div class="col-sm-1">
+                <img src="static/images/layout/demoL9-TitleButton_repeat03.png"/>
+            </div>
+            <div class="col-sm-11">
+                <h4 class="title">
+                    <span alian="center">Arrage the words to form a coherent sentence.</span>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <drag-item ng-repeat="option in data.options" class="drag-item" drag-id="item-{{option.id}}" drop-to="top right">
+                    <p>{{option.phoneticize}}</br> {{option.title}}</p>
+                </drag-item>
+                <div class="row"></div>
+                <drop-spot ng-repeat="option in data.options" max-items="1"  drop-id="drop-spot{{option.id}}">
+                    <p>Drop Here</p>
+                </drop-spot>
+            </div>
+        </div>
     </drag-and-drop>
 </div>
-<op-footer-button></op-footer-button>
+
