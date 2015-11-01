@@ -21,7 +21,7 @@
             'slick-carousel': 'vendor/slick-carousel/slick.min',
             text: 'vendor/requirejs-text/text',
             'ui.router': 'vendor/angular-ui-router/angular-ui-router',
-            ngDD: 'vendor/angular-drag-and-drop/build/js/angular-drag-and-drop'
+            ngDD: 'vendor/angular-drag-and-drop/index'
         },
         shim: {
             angular: {

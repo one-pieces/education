@@ -23,6 +23,7 @@ export var controllerName = baseController.controllerName;
 
 angular.module(moduleName, [
 
+    'laneolson.ui.dragdrop',
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
     listeningComprehensionDirective.moduleName,
@@ -31,5 +32,6 @@ angular.module(moduleName, [
     sketchQuestionDirective.moduleName,
     sketchVideoDirective.moduleName,
     slickDirective.moduleName,
-    videoComprehensionDirective.moduleName])
+    videoComprehensionDirective.moduleName,
+    sortPageDirective.moduleName])
     .controller(baseController.controllerName, baseController.Controller);

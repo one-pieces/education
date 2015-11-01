@@ -1,12 +1,26 @@
-<drag-and-drop>
+<div>
+    <drag-and-drop>
 
-    <drag-item>
-        <p>Anything in here</p>
-        <p>will be draggable</p>
-    </drag-item>
+        <drag-item class="drag-item" drag-id="item-one">
+            <p>Item One</p>
+        </drag-item>
 
-    <drop-spot>
-        <p>Drop Here</p>
-    </drop-spot>
+        <drag-item class="drag-item" drag-id="item-two" drop-to="top right">
+            <p>Item Two</p>
+        </drag-item>
 
-</drag-and-drop>
+        <drag-item class="drag-item" drag-id="item-three" drop-to="bottom left">
+            <p>Item Three</p>
+        </drag-item>
+
+        <drag-item class="drag-item" drag-id="item-four" drop-to="bottom right">
+            <p>Item Four</p>
+        </drag-item>
+
+        <drop-spot max-items="3" class="drop-spot" drop-id="drop-one">
+            <p>Drop Here</p>
+        </drop-spot>
+
+    </drag-and-drop>
+</div>
+<op-footer-button></op-footer-button>

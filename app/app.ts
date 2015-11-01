@@ -3,6 +3,7 @@
 /// <amd-dependency path='css!/vendor/bootstrap-css/bootstrap.min.css' />
 /// <amd-dependency path='css!/styles/default.css' />
 /// <amd-dependency path='ngSanitize' />
+/// <amd-dependency path='ngDD' />
 
 import $ = require('jquery');
 import angular = require('angular');
@@ -13,7 +14,7 @@ import routes = require('./routes');
 
 var moduleName = config.appName;
 
-var app = angular.module(moduleName, [routes.moduleName, 'ngSanitize']);
+var app = angular.module(moduleName, [routes.moduleName, 'ngSanitize', 'laneolson.ui.dragdrop']);
 
 app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', 
     function($urlRouterProvider: ng.ui.IUrlRouterProvider, 

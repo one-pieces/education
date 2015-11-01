@@ -46,7 +46,9 @@ export class SortPage {
 export class SortPageDirective implements ng.IDirective {
     static $inject = ['$injector'];
 
-    constructor(private $injector: ng.auto.IInjectorService) {}
+    constructor(private $injector: ng.auto.IInjectorService) {
+        alert("directive constructor");
+    }
 
     restrict = 'E';
     template = templateText;

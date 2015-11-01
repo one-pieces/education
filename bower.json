@@ -28,6 +28,6 @@
     "slick-carousel": "~1.5.8",
     "ng-pageslide": "https://raw.githubusercontent.com/dpiccone/ng-pageslide/master/dist/angular-pageslide-directive.min.js",
     "angular-sanitize": "~1.4.7",
-    "angular-drag-and-drop": "https://github.com/Lane/angular-drag-and-drop.git"
+    "angular-drag-and-drop": "https://raw.githubusercontent.com/Lane/angular-drag-and-drop/master/build/js/angular-drag-and-drop.js"
   }
 }
