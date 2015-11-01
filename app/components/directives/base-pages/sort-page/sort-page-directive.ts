@@ -6,7 +6,7 @@
 import angular = require('angular');
 import config = require('config');
 
-'use strict';
+// 'use strict';
 
 export var moduleName = config.appName + '.components.directives.basePages.sortPage';
 export var directiveName = 'opSortPage';
@@ -16,6 +16,7 @@ export interface IScope extends ng.IScope {
     sortPage: SortPage;
     someAttribute: string;
     data: any;
+
 }
 
 /**
@@ -24,10 +25,7 @@ export interface IScope extends ng.IScope {
 export class SortPage {
     static $inject = ['scope'];
 
-    someValue: string;
-
     constructor(private scope: IScope) {
-        this.someValue = 'sort-page-directive';
     }
 }
 
@@ -56,6 +54,7 @@ export class SortPageDirective implements ng.IDirective {
     // transclude = true;
     scope = {
         data: "="
+
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
@@ -64,7 +63,7 @@ export class SortPageDirective implements ng.IDirective {
     }
 }
 
-angular.module(moduleName, [])
+angular.module(moduleName, ['laneolson.ui.dragdrop'])
     .directive(directiveName, ['$injector', ($injector: ng.auto.IInjectorService) => {
         return $injector.instantiate(SortPageDirective);
     }]);
