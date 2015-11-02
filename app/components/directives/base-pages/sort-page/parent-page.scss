@@ -12,8 +12,6 @@ drag-item {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: -webkit-grab;
-  cursor: grab;
   z-index: 10;
 }
 drag-item:active {
