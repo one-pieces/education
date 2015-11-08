@@ -1,0 +1,11 @@
+.sort-page {
+  .thumbnail { height: 280px !important; }
+  .btn-droppable { position:relative;width: 180px; height: 30px; padding-left: 4px; }
+  .btn-draggable { position:relative;width: 160px; }
+  .emage { height: 215px; }
+  .container {
+      max-width: 1000px;
+      margin-top: 80px;
+      position: absolute;
+    }
+}

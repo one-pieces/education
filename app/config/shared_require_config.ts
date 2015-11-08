@@ -13,6 +13,7 @@
             bootstrap: 'vendor/bootstrap/bootstrap',
             'bootstrap-css': 'vendor/bootstrap-css/bootstrap.min',
             jquery: 'vendor/jquery/jquery',
+            'jquery-ui': 'vendor/jquery-ui/jquery-ui',
             json: 'vendor/requirejs-plugins/json',
             ngSanitize: 'vendor/angular-sanitize/angular-sanitize',
             ngPageslide: 'vendor/ng-pageslide/index', //https://github.com/dpiccone/ng-pageslide
@@ -25,6 +26,9 @@
             'ngDragDrop': 'vendor/angular-dragdrop/angular-dragdrop'
         },
         shim: {
+            'jquery-ui' :{
+                deps: ['jquery']
+            },
             angular: {
                 deps: ['jquery'],
                 exports: 'angular'
@@ -51,7 +55,7 @@
                 deps: ['angular']
             },
             'ngDragDrop': {
-                deps: ['angular']
+                deps: ['jquery-ui']
             }
 
         }

@@ -1,5 +1,6 @@
 /// <reference path='../../../../app.d.ts' />
-/// <amd-dependency path='css!./goal-page.css' />
+/// <amd-dependency path='css!../../../../vendor/jquery-ui-css/index.css' />
+/// <amd-dependency path='css!./sort-page.css' />
 /// <amd-dependency path='text!components/directives/base-pages/sort-page/sort-page.html' />
 import angular = require('angular');
 import config = require('config');
@@ -21,11 +22,9 @@ export interface IScope extends ng.IScope {
 export class SortPage {
     static $inject = ['scope'];
     constructor(private $scope: IScope) {
-        $scope.images = [{'thumb': '1.png'},{'thumb': '2.png'},{'thumb': '3.png'},{'thumb': '4.png'}];
-        $scope.list1 = [];
-        angular.forEach($scope.images, function(val, key) {
-            $scope.list1.push({});
-        });
+
+        $scope.list1 = [{},{},{},{}];
+
         $scope.list2 = [
             { 'title': 'KnockoutJS', 'drag': true },
             { 'title': 'EmberJS', 'drag': true },
@@ -54,14 +53,15 @@ export class SortPage {
                 { 'title': 'AngularJS', 'drag': true }
             ];
             $scope.list1 = [{},{},{},{}];
-            $scope.overCallback = function(event, ui) {
-                console.log('Look, I`m over you');
-            };
 
-            $scope.outCallback = function(event, ui) {
-                console.log('I`m not, hehe');
-            };
         }
+        $scope.overCallback = function(event, ui) {
+            console.log('Look, I`m over you');
+        };
+
+        $scope.outCallback = function(event, ui) {
+            console.log('I`m not, hehe');
+        };
     }
 
 
