@@ -23,6 +23,7 @@ export class VideoComprehension {
     static $inject = ['scope', '$sce'];
 
     trustedVideoUrl: string;
+    isCurrentProblemLastOne = false;
     constructor(private scope: IScope, private $sce: ng.ISCEService) {
         this.trustedVideoUrl = this.$sce.trustAsResourceUrl(scope.data.videoUrl);
     }

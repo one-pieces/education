@@ -23,6 +23,7 @@ export class ListeningComprehension {
     static $inject = ['scope', '$sce'];
 
     trustedAudioUrl: string;
+    isCurrentProblemLastOne = false;
     constructor(private scope: IScope, private $sce: ng.ISCEService) {
         this.trustedAudioUrl = this.$sce.trustAsResourceUrl(scope.data.audioUrl);
     }

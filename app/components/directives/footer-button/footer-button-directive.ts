@@ -14,6 +14,7 @@ export interface IScope extends ng.IScope {
     footerButton: FooterButton;
     isCheckButton?: boolean;
     isClickButtonDisabled?: boolean;
+    isNextButtonHidden?: boolean;
     clickEvent?: Function;
 }
 
@@ -24,6 +25,9 @@ export class FooterButton {
     static $inject = ['scope'];
 
     constructor(private scope: IScope) {
+        scope.$watch('isNextButtonHidden', () => {
+            console.log(scope.isNextButtonHidden);
+        });
     }
 }
 
@@ -52,6 +56,7 @@ export class FooterButtonDirective implements ng.IDirective {
     scope = {
         isCheckButton: '=?',
         isClickButtonDisabled: '=?',
+        isNextButtonHidden: '=?',
         clickEvent: '&?'
     };
 

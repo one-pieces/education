@@ -9,8 +9,8 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <op-choice type="listening-comprehension" id="data.id" data="data.problems"></op-choice>
+            <op-choice type="listening-comprehension" id="data.id" data="data.problems" is-last-one="listeningComprehension.isCurrentProblemLastOne"></op-choice>
         </div>
     </div>
 </div>
-<op-footer-button></op-footer-button>
+<op-footer-button is-next-button-hidden="!listeningComprehension.isCurrentProblemLastOne"></op-footer-button>

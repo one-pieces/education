@@ -30,7 +30,7 @@
     <div class="v-footer">
         <ul class="list-inline">
             <li><button class="btn btn-lg" ng-disabled="!choice.isOptionClicked || choice.isSubmitted" ng-click="choice.clickSubmit()">Submit</button></li>
-            <li><a class="btn btn-lg slick-arrow {{type}}-next" ng-show="choice.isSubmitted && choice.problemIndex !== data.length-1" ng-click="choice.clickNext()" href="#">Next</a></li>
+            <li><a class="btn btn-lg slick-arrow {{type}}-next" ng-show="choice.isNextShown()" ng-click="choice.clickNext()" href="#">Next</a></li>
         </ul>
     </div>
 </div>

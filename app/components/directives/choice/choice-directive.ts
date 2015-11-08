@@ -16,6 +16,7 @@ export interface IScope extends ng.IScope {
     id: string;
     showTitle?: boolean;
     type: string;
+    isLastOne: boolean;
 }
 
 /**
@@ -36,7 +37,7 @@ export class Choice {
             problem.options.forEach((option: any) => {
                 option.audioUrl = this.$sce.trustAsResourceUrl(option.audioUrl);
             });
-        });  
+        });
     }
 
     clickOption(index: number, parentIndex: number) {
@@ -64,10 +65,17 @@ export class Choice {
         }
         this.scope.$emit(this.scope.type,
             { id: this.scope.id, problemIndex: this.problemIndex, result: this.result });
+        if (!this.isNextShown()) {
+            this.scope.isLastOne = true;
+        }
     }
     clickNext() {
         this.isOptionClicked = false;
         this.isSubmitted = false;
+    }
+
+    isNextShown(): boolean {
+        return this.isSubmitted && this.problemIndex !== this.scope.data.length - 1;
     }
 }
 
@@ -97,7 +105,8 @@ export class ChoiceDirective implements ng.IDirective {
         data: '=',
         id: '=',
         showTitle: '=?',
-        type: '@'
+        type: '@',
+        isLastOne: '='
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
