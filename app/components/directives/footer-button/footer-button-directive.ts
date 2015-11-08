@@ -15,6 +15,7 @@ export interface IScope extends ng.IScope {
     isCheckButton?: boolean;
     isClickButtonDisabled?: boolean;
     isNextButtonHidden?: boolean;
+    isPrevButtonHidden?: boolean;
     clickEvent?: Function;
 }
 
@@ -57,6 +58,7 @@ export class FooterButtonDirective implements ng.IDirective {
         isCheckButton: '=?',
         isClickButtonDisabled: '=?',
         isNextButtonHidden: '=?',
+        isPrevButtonHidden: '=?',
         clickEvent: '&?'
     };
 
