@@ -6,6 +6,7 @@ import imitateTextData = require('../../static/data/imitate-text-data');
 import listeningComprehensionData = require('../../static/data/listening-comprehension-data');
 import models = require('../../components/models');
 import pageData = require('../../static/data/page-data');
+import sortData = require('../../static/data/sort-data');
 import sketchQuestionData = require('../../static/data/sketch-question-data');
 import videoComprehensionData = require('../../static/data/video-comprehension-data');
 
@@ -34,6 +35,7 @@ export class BaseController {
     listeningComprehensionData = listeningComprehensionData;
     listeningComprehensionScoreData: any;
     pageData = pageData;
+    sortData = sortData;
     currentUser: models.user.IUser;
 
     constructor(private $scope: IScope,

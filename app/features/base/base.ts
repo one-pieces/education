@@ -16,6 +16,7 @@ import sketchQuestionDirective = require("../../components/directives/base-pages
 import scorePageDirective = require("../../components/directives/base-pages/score-page/score-page-directive");
 import slickDirective = require("../../components/directives/slick/slick-directive");
 import videoComprehensionDirective = require("../../components/directives/base-pages/video-comprehension/video-comprehension-directive");
+import sortPageDirective =  require("../../components/directives/base-pages/sort-page/sort-page-directive");
 
 'use strict';
 
@@ -25,6 +26,7 @@ export var controllerName = baseController.controllerName;
 
 angular.module(moduleName, [
     'pageslide-directive',
+    'ngDragDrop',
     footerButtonDirective.moduleName,
     goalPageDirective.moduleName,
     imitateChoiceDirective.moduleName,
@@ -35,5 +37,6 @@ angular.module(moduleName, [
     sketchQuestionDirective.moduleName,
     sketchVideoDirective.moduleName,
     slickDirective.moduleName,
-    videoComprehensionDirective.moduleName])
+    videoComprehensionDirective.moduleName,
+    sortPageDirective.moduleName])
     .controller(baseController.controllerName, baseController.Controller);

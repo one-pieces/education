@@ -21,7 +21,8 @@
             shared_require_config: 'config/shared_require_config',
             'slick-carousel': 'vendor/slick-carousel/slick.min',
             text: 'vendor/requirejs-text/text',
-            'ui.router': 'vendor/angular-ui-router/angular-ui-router'
+            'ui.router': 'vendor/angular-ui-router/angular-ui-router',
+            'ngDragDrop': 'vendor/angular-dragdrop/angular-dragdrop'
         },
         shim: {
             angular: {
@@ -48,7 +49,11 @@
             },
             'ui.router': {
                 deps: ['angular']
+            },
+            'ngDragDrop': {
+                deps: ['angular']
             }
+
         }
     });
 })();
