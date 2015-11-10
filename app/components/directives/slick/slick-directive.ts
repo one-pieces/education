@@ -113,6 +113,7 @@ export class SlickDirective implements ng.IDirective {
         var slider: any = $(element);
 
         function initializeSlick() {
+
             slider.slick({
                 accessibility: scope.accessibility !== 'false',
                 arrows: scope.arrows !== 'false',
@@ -123,7 +124,7 @@ export class SlickDirective implements ng.IDirective {
                 centerPadding: scope.centerPadding || '50px',
                 cssEase: scope.cssEase || 'ease',
                 dots: scope.dots === 'true',
-                draggable: scope.draggable === 'true',
+                draggable: scope.draggable === 'false',
                 easing: scope.easing || 'linear',
                 fade: scope.fade === 'true',
                 focusOnSelect: scope.focusOnSelect === 'true',
@@ -141,11 +142,14 @@ export class SlickDirective implements ng.IDirective {
                 slidesToScroll: scope.slidesToScroll != null ? parseInt(scope.slidesToScroll, 10) : 1,
                 speed: scope.speed != null ? parseInt(scope.speed, 10) : 300,
                 swipe: scope.swipe !== 'false',
-                touchMove: scope.touchMove !== 'false',
+                touchMove: scope.touchMove !== 'true',
                 touchThreshold: scope.touchThreshold ? parseInt(scope.touchThreshold, 10) : 5,
                 useCSS: scope.useCss !== 'false',
                 vertical: scope.vertical === 'true'
             });
+
+            $('*[draggable!=true]','.slick-track').unbind('dragstart');
+
         }
 
         if (scope.initOnload) {

@@ -45,6 +45,7 @@ export class BaseController {
             user.ui.fullName = user.givenName + ' ' + user.familyName;
             this.currentUser = user;
             console.log('return user success, user info: ' + user.givenName);
+
         });
 
         this.sketchQuestionScoreData = {

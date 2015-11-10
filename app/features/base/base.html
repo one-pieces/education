@@ -10,8 +10,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div op-slick infinite="false" init-onload="true" data="base.sketchQuestionData" prev-arrow=".base .prev" next-arrow=".base .next" fade="true">
-                   <!--     <div class="slide">
+                    <div op-slick infinite="false" draggable="false" jqyoui-draggable="" init-onload="true" data="base.sketchQuestionData" prev-arrow=".base .prev" next-arrow=".base .next" fade="true">
+                        <div class="slide">
                             <op-goal-page button-label="START">
                                 <span>
                                     In this lesson we're going to have you master the following target langauge:<br/>
@@ -71,10 +71,11 @@
                         </div>
                         <div class="slide">
                             <op-score-page part-score="base.imitateChoiceScoreData.partScore"></op-score-page>
-                        </div>-->
-                        <div class="slide">
-                            <op-sort-page ></op-sort-page>
                         </div>
+                        <div class="slide" ng-repeat="sortData in base.sortData">
+                            <div><op-sort-page data="sortData"></op-sort-page></div>
+                        </div>
+
                     </div>
                 </div>
             </div>

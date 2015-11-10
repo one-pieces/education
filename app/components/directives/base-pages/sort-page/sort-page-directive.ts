@@ -1,5 +1,4 @@
 /// <reference path='../../../../app.d.ts' />
-/// <amd-dependency path='css!../../../../vendor/jquery-ui-css/index.css' />
 /// <amd-dependency path='css!./sort-page.css' />
 /// <amd-dependency path='text!components/directives/base-pages/sort-page/sort-page.html' />
 import angular = require('angular');
@@ -13,7 +12,8 @@ export var templateText = window.require('text!components/directives/base-pages/
 
 export interface IScope extends ng.IScope {
     sortPage: SortPage;
-    buttonLabel: string;
+    data: any;
+    id: any;
 }
 
 /**
@@ -24,14 +24,11 @@ export class SortPage {
     constructor(private $scope: IScope) {
 
         $scope.list1 = [{},{},{},{}];
-
-        $scope.list2 = [
-            { 'title': 'KnockoutJS', 'drag': true },
-            { 'title': 'EmberJS', 'drag': true },
-            { 'title': 'BackboneJS', 'drag': true },
-            { 'title': 'AngularJS', 'drag': true }
-        ];
+        alert($scope.data);
+        $scope.list2 = $scope.data.src;
         $scope.startCallback = function(event, ui, title) {
+            $scope.$emit('slide',
+                { event: event });
             console.log('You started draggin: ' + title.title);
             $scope.draggedTitle = title.title;
         };
@@ -39,6 +36,8 @@ export class SortPage {
             console.log('Why did you stop draggin me?');
         };
         $scope.dragCallback = function(event, ui) {
+            $scope.$emit('slide',
+                { event: event });
             console.log('hey, look I`m flying');
         };
         $scope.dropCallback = function(event, ui) {
@@ -90,7 +89,8 @@ export class SortPageDirective implements ng.IDirective {
     template = templateText;
     transclude = true;
     scope = {
-        buttonLabel: '@'
+        data: '=',
+        id: '='
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {

@@ -55,7 +55,7 @@
                 deps: ['angular']
             },
             'ngDragDrop': {
-                deps: ['jquery-ui']
+                deps: ['jquery-ui','angular']
             }
 
         }
