@@ -13,7 +13,6 @@ export var templateText = window.require('text!components/directives/base-pages/
 export interface IScope extends ng.IScope {
     sortPage: SortPage;
     data: any;
-    id: any;
 }
 
 /**
@@ -21,11 +20,14 @@ export interface IScope extends ng.IScope {
  */
 export class SortPage {
     static $inject = ['scope'];
+    isChecked: boolean = false;
     constructor(private $scope: IScope) {
 
         $scope.list1 = [{},{},{},{}];
-        alert($scope.data);
-        $scope.list2 = $scope.data.src;
+        var listTemp = [];
+        angular.copy($scope.data.src, listTemp);
+        $scope.list2 = listTemp;
+
         $scope.startCallback = function(event, ui, title) {
             $scope.$emit('slide',
                 { event: event });
@@ -41,19 +43,11 @@ export class SortPage {
             console.log('hey, look I`m flying');
         };
         $scope.dropCallback = function(event, ui) {
+            console.log($scope.data.src);
             console.log('hey, you dumped me :-(' , $scope.draggedTitle);
         };
 
-        $scope.reset = function() {
-            $scope.list2 = [
-                { 'title': 'KnockoutJS', 'drag': true },
-                { 'title': 'EmberJS', 'drag': true },
-                { 'title': 'BackboneJS', 'drag': true },
-                { 'title': 'AngularJS', 'drag': true }
-            ];
-            $scope.list1 = [{},{},{},{}];
 
-        }
         $scope.overCallback = function(event, ui) {
             console.log('Look, I`m over you');
         };
@@ -61,6 +55,17 @@ export class SortPage {
         $scope.outCallback = function(event, ui) {
             console.log('I`m not, hehe');
         };
+
+    }
+    reset() {
+        var listTemp = [];
+        angular.copy(this.$scope.data.src, listTemp);
+        this.$scope.list2 = listTemp;
+        this.$scope.list1 = [{},{},{},{}];
+    }
+
+    submit() {
+        this.isChecked = true;
     }
 
 
@@ -89,8 +94,7 @@ export class SortPageDirective implements ng.IDirective {
     template = templateText;
     transclude = true;
     scope = {
-        data: '=',
-        id: '='
+        data: '='
     };
 
     link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => {
@@ -98,6 +102,7 @@ export class SortPageDirective implements ng.IDirective {
             this.$injector.instantiate(SortPage, { scope: scope, element: element, attrs: attrs });
     }
 }
+
 
 angular.module(moduleName, [])
     .directive(directiveName, ['$injector', ($injector: ng.auto.IInjectorService) => {

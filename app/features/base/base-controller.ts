@@ -34,6 +34,7 @@ export class BaseController {
     videoComprehensionScoreData: any;
     listeningComprehensionData = listeningComprehensionData;
     listeningComprehensionScoreData: any;
+    sortScoreData: any;
     pageData = pageData;
     sortData = sortData;
     currentUser: models.user.IUser;
@@ -81,6 +82,16 @@ export class BaseController {
         this.imitateChoiceScoreData = {
             partScore: {
                 label: 'Score for multiple choice',
+                result: {
+                    score: '0',
+                    totleScore: '0'
+                }
+            }
+        }
+
+        this.sortScoreData = {
+            partScore: {
+                label: 'Score for sort choice',
                 result: {
                     score: '0',
                     totleScore: '0'
@@ -161,6 +172,25 @@ export class BaseController {
                 this.imitateChoiceScoreData.partScore.result.score = imitateChoiceScore.toString();
             }
         });  
+    }
+
+    sortScoreCounter() {
+        var sortTotleScore = 0;
+        var sortChoiceScore = 0;
+        this.sortData.forEach(sort => {
+            sort.answers.forEach( answer => {
+                sortChoiceScore += answer.score;
+            });
+        });
+        this.sortData.partScore.result.totleScore = sortChoiceScore.toString();
+
+        this.$scope.$on('score', (event: any, message: any) => {
+            if (message.result) {
+                sortChoiceScore +=
+                    this.sortData[message.id].problems[message.problemIndex].score;
+                this.imitateChoiceScoreData.partScore.result.score = imitateChoiceScore.toString();
+            }
+        });
     }
 }
 

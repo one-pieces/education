@@ -1,15 +1,46 @@
 <div class="sort-page">
-    <div class="container form-inline" style="margin-top:55px;text-align: center;">
-        <div class="btn btn-default btn-droppable" ng-repeat="item in list2" data-drop="true" ng-model='list2' jqyoui-droppable="{index: {{$index}}}">
-            <div class="btn-draggable" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list2" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true, onStart:'startCallback(item, $index)', onStop: 'stopCallback', onDrag: 'dragCallback'}" ng-hide="!item.title">{{item.title}}</div>
+    <div class="description">
+       Arrange the words to form a coherent sentence.
+    </div>
+    <div style="margin-top:55px;text-align: center;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-7">
+                <div ng-show="!sortPage.isChecked" class="btn btn-default btn-droppable" ng-repeat="item in list2" data-drop="true" ng-model='list2' jqyoui-droppable="{index: {{$index}}}">
+                    <div class="btn-draggable" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list2" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true, onStart:'startCallback(item, $index)', onStop: 'stopCallback', onDrag: 'dragCallback'}" ng-hide="!item.title">{{item.phoneticize}}
+                        <br>{{item.title}}</div>
+                </div>
+                <div ng-show="sortPage.isChecked" class="btn btn-default" ng-repeat="item in data.answers">
+                    <div class="btn-draggable"  >{{item.phoneticize}}
+                        <br>{{item.title}}</div>
+                </div>
+            </div>
+            <div class="col-md-2" style="margin-top: 16px"> <span ><img ng-show="sortPage.isChecked" src="/static/images/layout/demoL9-right-button.png"></span></div>
+            <div class="col-md-1"> </div>
         </div>
     </div>
-    <div class="container form-inline" style="margin-top:75px;text-align: center;" >
-        <div ng-repeat="item in list1" class="btn btn-default btn-droppable" data-drop="true" ng-model='list1' jqyoui-droppable="{index: {{$index}}, onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}">
-            <div class="btn-draggable" ng-show="list1[$index].title" data-drag="{{list1[$index].drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">{{list1[$index].title}}</div>
+    <div style="margin-top:70px;text-align: center;" >
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-7">
+                <ul class="list-inline">
+                    <li ng-repeat="item in list1" class="btn btn-default btn-droppable" data-drop="true" ng-model='list1' jqyoui-droppable="{index: {{$index}}, onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}">
+                        <div class="btn-draggable" ng-show="list1[$index].title" data-drag="{{list1[$index].drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">{{list1[$index].phoneticize}}<br>{{list1[$index].title}}</div>
+                    </li>
+                </ul>
+                <ul ng-show="!sortPage.isChecked" class="list-inline" style="margin-top: 65px">
+                    <li><img  src="/static/images/layout/demoL9-eeset-Button.png" ng-click="sortPage.reset()"></li>
+                    <li><img  src="/static/images/layout/demoL9-submit-Button.png" ng-click="sortPage.submit()"></li>
+                </ul>
+                <ul ng-show="sortPage.isChecked" class="list-inline" style="margin-top: 65px">
+                    <li class="slick-arrow next"><img  ng-click="sortPage.isChecked=false" src="/static/images/layout/demoL9-next-Button.png" ></li>
+                </ul>
+            </div>
+            <div class="col-md-2" style="margin-top: 16px"> <span ><img ng-show="true" src="/static/images/layout/demoL9-wrong-button.png"></span></div>
+            <div class="col-md-1"> </div>
         </div>
     </div>
+    <op-footer-button is-check-button="true" is-click-button-disabled="sketchQuestion.isClickButtonDisabled" click-event="sketchQuestion.checkAnswer()"></op-footer-button>
 </div>
-<op-footer-button></op-footer-button>
 
 

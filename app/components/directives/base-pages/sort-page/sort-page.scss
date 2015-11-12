@@ -1,11 +1,19 @@
 .sort-page {
-  .btn-droppable { position:relative;width: 180px; height: 30px;}
-  .btn-draggable { position:relative;width: 160px; height: 30px;}
+  .btn-droppable { position:relative;width: 180px; height: 50px;text-align:center;}
+  .btn-draggable { position:relative;width: 160px; height: 50px;text-align:center;}
   .btn-default {
     position:relative;
-    color: dodgerblue;
+    color: black;
     background-color: white;
-    border-color: dodgerblue;
-    height:30px;
+    border-color: black;
+    border-width: 1px;
+    height:60px;
+
+    text-align:center;
+    width:165px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 12px;
   }
 }
