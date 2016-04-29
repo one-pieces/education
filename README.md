@@ -1,6 +1,9 @@
 # education
 A e-system to learn Chinese
 
+
+First! You need to install NodeJS!
+
 How to Set Up:
 
 1. git clone https://github.com/one-pieces/education.git
@@ -10,6 +13,8 @@ How to Set Up:
 5. grunt update
 6. grunt develop
 7. 浏览器输入localhost:5000/education
+
+Attention!! If it report some ERROR about "node-sass" when running grunt update, please run "npm rebuild node-sass". More detail on http://stackoverflow.com/questions/28409100/try-reinstalling-node-sass-on-node-0-12#
 
 This project has used MEAN(Mongo, Express, AngularJS, NodeJS) framework. The following is the file structure:
 
